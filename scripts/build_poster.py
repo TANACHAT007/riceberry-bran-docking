@@ -71,6 +71,14 @@ def main(url=""):
     xt = min(r["affinity"] for r in v["MGAM"]["redock"])      # crystal-conformer acarbose on MGAM
     d_mgam = c3g["MGAM"]["mean"] - xt                          # ΔΔG vs acarbose, MGAM
     d_hpa = c3g["HPA"]["mean"] - acb["HPA"]["mean"]            # ΔΔG vs acarbose, HPA
+    import numpy as np
+    from scipy import stats as st
+    ha = np.array([r["HA"] for r in S["rows"]], float)
+    lr_m = st.linregress(ha, np.array([-r["MGAM"]["mean"] for r in S["rows"]]))
+    lr_h = st.linregress(ha, np.array([-r["HPA"]["mean"] for r in S["rows"]]))
+    r_mgam, p_mgam, r_hpa, p_hpa = lr_m.rvalue, lr_m.pvalue, lr_h.rvalue, lr_h.pvalue
+    OCC = json.loads((ROOT / "site_occupancy.json").read_text())
+    min_occ = min(min(v[t]["occupancy_2A"] for t in ("MGAM", "HPA")) for v in OCC.values()) * 100
     prs = Presentation(ROOT / "templates" / "poster.pptx"); sl = prs.slides[0]
 
     for sh in sl.shapes:
@@ -119,29 +127,29 @@ def main(url=""):
              ("2  Protein prep", "PDBFixer: waters and ions removed, missing atoms and hydrogens added at pH 7.4; Meeko PDBQT"),
              ("3  Ligands", "12 structures from PubChem; RDKit ETKDG + MMFF94 optimisation; Meeko"),
              ("4  Docking", "AutoDock Vina 1.2.7 in the acarbose site, exhaustiveness 16, 3 independent seeds (78 runs)"),
-             ("5  Analysis", "ΔΔG vs acarbose on each enzyme; contact residues ≤ 4 Å, H-bonds ≤ 3.5 Å, logP, ligand efficiency")]
+             ("5  Analysis", "ΔΔG vs acarbose; contacts ≤ 4 Å and H-bonds ≤ 3.5 Å per residue; ligand efficiency; score–size regression; logP")]
     bw = (W - 4 * 0.7) / 5
     for i, (h, b) in enumerate(steps):
         bx = X0 + i * (bw + 0.7)
-        panel(sl, bx, yb, bw, 9.6)
-        text(sl, bx + 0.5, yb + 0.5, bw - 1.0, 8.8, [[B(h, color=NAVY, size=29)], [N(b, size=24)]])
-    text(sl, X0, yb + 9.9, W, 2.4, [[B("Protocol validation: "), N(
+        panel(sl, bx, yb, bw, 8.8)
+        text(sl, bx + 0.5, yb + 0.5, bw - 1.0, 8.0, [[B(h, color=NAVY, size=29)], [N(b, size=24)]])
+    text(sl, X0, yb + 9.1, W, 2.2, [[B("Protocol validation: "), N(
         f"acarbose re-docked from a randomised start returned to its MGAM crystal pose in every run "
         f"(RMSD {v['MGAM']['rmsd']}–{max(r['rmsd'] for r in v['MGAM']['redock'])} Å, n = 3).")]], size=25)
 
-    # ============ Row 3: the selectivity map (hero) ============
-    y = 52.6
+    # ============ Row 3: the selectivity map (hero), contact map, findings ============
+    y = 51.6
     yb = heading(sl, X0, y, W, "RESULTS  ·  RANKING THE BRAN")
-    wl = 30.0; xr3 = X0 + wl + 1.4; wr = W - wl - 1.4
+    wl = 29.0; xr3 = X0 + wl + 1.4; wr = W - wl - 1.4
     picture(sl, FIG / "selectivity.png", X0, yb, w=wl)
-    text(sl, X0, yb + 25.0, wl, 2.8, [[B("Fig. 1 "), N("Each constituent placed against acarbose on both enzymes (ΔΔG, mean of 3 seeds). "
+    text(sl, X0, yb + 23.9, wl, 2.8, [[B("Fig. 1 "), N("Each constituent placed against acarbose on both enzymes (ΔΔG, mean of 3 seeds). "
          "Circles dissolve in water, squares do not. The shaded area marks where a usable food candidate would sit.")]], size=24)
     picture(sl, FIG / "pose_MGAM_cyanidin_3_O_glucoside.png", xr3, yb, w=wr / 2 - 0.3)
     picture(sl, FIG / "pose_HPA_cyanidin_3_O_glucoside.png", xr3 + wr / 2 + 0.3, yb, w=wr / 2 - 0.3)
-    text(sl, xr3, yb + 13.4, wr, 2.8, [[B("Fig. 2 "), N("Cyanidin-3-O-glucoside (purple) in α-glucosidase (left) and α-amylase (right). "
+    text(sl, xr3, yb + 13.6, wr, 2.8, [[B("Fig. 2 "), N("Cyanidin-3-O-glucoside (purple) in α-glucosidase (left) and α-amylase (right). "
          "Gold = catalytic residues, green = hydrogen-bond partners.")]], size=24)
-    panel(sl, xr3, yb + 16.3, wr, 11.4, PALE, BERRY)
-    text(sl, xr3 + 0.9, yb + 16.7, wr - 1.8, 10.6, [
+    panel(sl, xr3, yb + 16.6, wr, 17.6, PALE, BERRY)
+    text(sl, xr3 + 0.9, yb + 17.0, wr - 1.8, 16.8, [
         [B("The tightest binder is not the usable one", color=GOLD, size=30)],
         [N(f"γ-Oryzanol esters topped the ranking (cycloartenyl ferulate {cf['MGAM']['mean']:.2f} / {cf['HPA']['mean']:.2f} kcal/mol)".replace("-", "\u2212")
            + ", but with logP > 10 they will not dissolve in the gut lumen, and they sit in the bran's oil fraction.")],
@@ -150,10 +158,14 @@ def main(url=""):
            f"({p3g['MGAM']['mean']:.2f} / {p3g['HPA']['mean']:.2f}) ranked next".replace("-", "\u2212")
            + f", hydrogen-bonded the catalytic acids {res('ASP443')}/{res('ASP542')} and {res('ASP197')}/{res('GLU233')}, "
              "and were the only high-ranking compounds with logP < 0.7.")],
-    ], size=25, space=0.4)
+        [B("Size inflates the score, so efficiency was scored too", color=NAVY, size=30)],
+        [N(f"Across the panel the predicted affinity rose with molecular size (Pearson r = {r_mgam:.2f}, p = {p_mgam:.3f} on MGAM; "
+           f"r = {r_hpa:.2f}, p = {p_hpa:.4f} on HPA). Per heavy atom the anthocyanins bind more efficiently than the γ-oryzanol esters "
+           f"({c3g['MGAM']['LE']:.2f} vs {cf['MGAM']['LE']:.2f} kcal/mol/atom on MGAM) and than acarbose ({acb['MGAM']['LE']:.2f}).")],
+    ], size=25, space=0.38)
 
     # ============ Row 4: from screen to bench to product ============
-    y = 84.2
+    y = 89.8
     yb = heading(sl, X0, y, W, "FROM SCREEN TO PRODUCT", BERRY)
     boxes = [
         ("① Take this fraction", LEAF, [
@@ -172,14 +184,14 @@ def main(url=""):
     bw4 = (W - 2 * 1.0) / 3
     for i, (h, c, body) in enumerate(boxes):
         bx = X0 + i * (bw4 + 1.0)
-        panel(sl, bx, yb, bw4, 14.6, SOFT, c)
-        text(sl, bx + 0.8, yb + 0.6, bw4 - 1.6, 13.4, [[B(h, color=c, size=30)]] + body, size=25)
+        panel(sl, bx, yb, bw4, 12.4, SOFT, c)
+        text(sl, bx + 0.8, yb + 0.5, bw4 - 1.6, 11.4, [[B(h, color=c, size=30)]] + body, size=25)
 
     # ============ Row 5: conclusion + QR ============
-    y = 103.0
+    y = 105.8
     yb = heading(sl, X0, y, W, "CONCLUSION")
-    wq = 9.5
-    text(sl, X0, yb, W - wq - 1.5, 11.5, [
+    wq = 8.5
+    text(sl, X0, yb, W - wq - 1.5, 9.4, [
         [N("Scoring binding "), B("together with solubility", color=BERRY),
          N(" changes which molecule a food project should chase. The highest-scoring constituents of Riceberry bran, the "),
          B("γ-oryzanol esters"), N(", cannot dissolve where the enzymes work; the "), B("anthocyanins"),
@@ -191,9 +203,9 @@ def main(url=""):
     ], size=27)
     qx = X0 + W - wq
     picture(sl, FIG / "qr.png", qx, yb, w=wq)
-    text(sl, qx - 1.5, yb + 9.8, wq + 3.0, 2.4, [[B("Rotate the binding sites in 3D", size=23, color=NAVY)]], align=PP_ALIGN.CENTER)
+    text(sl, qx - 2.6, yb + 8.8, wq + 2.8, 2.0, [[B("Rotate the binding sites in 3D", size=23, color=NAVY)]], align=PP_ALIGN.CENTER)
 
-    text(sl, X0, 118.0, W, 3.2, [[B("Structures "), N("PDB 2QMJ (Sim et al., J Mol Biol 2008) and 3BAJ (Maurus et al., Biochemistry 2008).  "),
+    text(sl, X0, 120.5, W, 3.2, [[B("Structures "), N("PDB 2QMJ (Sim et al., J Mol Biol 2008) and 3BAJ (Maurus et al., Biochemistry 2008).  "),
         B("Software "), N("AutoDock Vina 1.2.7 (Eberhardt et al., JCIM 2021); Meeko; RDKit; PDBFixer. Ligands from PubChem.  "),
         B("Prior in vitro data "), N("Akkarachiyasit et al., Int J Mol Sci 2010;11:3387.  "),
         B("Acarbose tolerability "), N("US prescribing information.  All scripts and raw results via the QR link.")]], size=19)

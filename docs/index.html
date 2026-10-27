@@ -220,3 +220,14 @@ statics(); setTarget("MGAM");
 matchMedia("(prefers-color-scheme: dark)").addEventListener("change",()=>draw());
 new MutationObserver(()=>draw()).observe(document.documentElement,{attributes:true,attributeFilter:["data-theme"]});
 </script>
+
+<footer style="max-width:1100px;margin:0 auto;padding:28px 20px 56px;font:15px/1.6 'IBM Plex Sans Thai',system-ui,sans-serif;color:#5b6273">
+  <hr style="border:0;border-top:1px solid rgba(128,128,128,.25);margin:0 0 20px">
+  <p style="margin:0 0 10px"><strong style="color:inherit">Everything behind this screen</strong> — all numbers come from docking runs on a single laptop and can be reproduced from the scripts in the repository.</p>
+  <p style="margin:0 0 6px">
+    <a href="Supplementary_Figures_and_Data.pdf" style="color:#7a3fd1">Supplementary figures and full data (PDF)</a> ·
+    <a href="Poster_Puttitada_Pruetchayakul.pdf" style="color:#7a3fd1">Conference poster (PDF)</a> ·
+    <a href="https://github.com/TANACHAT007/riceberry-bran-docking" style="color:#7a3fd1">Scripts and raw results on GitHub</a>
+  </p>
+  <p style="margin:14px 0 0;font-size:13.5px">Docking ranks predicted binding, not inhibitory potency or selectivity. No health claim is made.</p>
+</footer>
