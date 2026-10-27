@@ -1,0 +1,17 @@
+[
+ {
+  "seed": 11,
+  "affinity": -7.81,
+  "rmsd": 2.04
+ },
+ {
+  "seed": 22,
+  "affinity": -7.8,
+  "rmsd": 2.06
+ },
+ {
+  "seed": 33,
+  "affinity": -7.78,
+  "rmsd": 2.06
+ }
+]

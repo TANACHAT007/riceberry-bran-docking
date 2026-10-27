@@ -1,0 +1,102 @@
+{
+  "file_name": "Puttitada_Pruetchayakul",
+  "email": "graciepiewppiew@gmail.com",
+  "corresponding_name": "Puttitada Pruetchayakul",
+  "poster_title": "Docking-based prioritisation of Riceberry bran constituents against human α-glucosidase and α-amylase for by-product valorisation",
+  "en": {
+    "title": "Docking-based prioritisation of Riceberry bran constituents against human α-glucosidase and α-amylase for by-product valorisation",
+    "kw_label": "Keywords",
+    "authors": [
+      {
+        "name": "Puttitada Pruetchayakul",
+        "aff": 1,
+        "presenter": true,
+        "corresponding": true
+      }
+    ],
+    "affiliations": [
+      "Bodindecha (Sing Singhaseni) School, Bangkok, Thailand"
+    ],
+    "sections": [
+      [
+        "Rationale",
+        "Riceberry bran, a low-value by-product of Thai rice milling, contains anthocyanins, γ-oryzanol, vitamin E and phenolic acids. Anthocyanins from pigmented rice inhibit the starch-digesting enzymes α-glucosidase and α-amylase in vitro. Which constituent to extract and assay first is unresolved, as they have never been compared on the human enzymes."
+      ],
+      [
+        "Objective",
+        "To prioritise eleven reported Riceberry bran constituents by predicted binding to human maltase-glucoamylase (MGAM) and pancreatic α-amylase (HPA), alongside the solubility a food ingredient needs."
+      ],
+      [
+        "Methods",
+        "MGAM (PDB 2QMJ) and HPA (PDB 3BAJ) were prepared at pH 7.4; compounds were docked into the acarbose site with AutoDock Vina 1.2.7 (exhaustiveness 16, 3 seeds, 78 runs). Re-docking crystal acarbose validated the protocol. Contact residues and physicochemical properties were analysed."
+      ],
+      [
+        "Results",
+        "Re-docked acarbose reproduced its crystal pose (RMSD 2.04–2.06 Å; −7.81 kcal/mol on MGAM, −8.69 on HPA). γ-Oryzanol esters bound most tightly (cycloartenyl ferulate −8.87 ± 0.12 on MGAM, −10.52 ± 0.09 on HPA) but were strongly lipophilic (logP > 10). Cyanidin-3-O-glucoside (−7.71 ± 0.02; −8.09 ± 0.02) and peonidin-3-O-glucoside (−7.64; −8.09) ranked next, hydrogen-bonded the catalytic acids of both enzymes (Asp443/Asp542 and Asp197/Glu233), and were the only high-ranking compounds that were water-soluble (logP < 0.7)."
+      ],
+      [
+        "Conclusion",
+        "Within this panel the anthocyanins combine high predicted binding with food-compatible solubility; the tightest binders do not. Docking ranks predicted binding only; potency and selectivity require assay confirmation."
+      ],
+      [
+        "Application",
+        "The ranking identifies the acidified aqueous, anthocyanin-rich fraction, not whole bran or the oil fraction, as the one to carry forward, and defines the two-enzyme IC50 comparison needed to test it."
+      ]
+    ],
+    "keywords": [
+      "Riceberry bran",
+      "anthocyanin",
+      "γ-oryzanol",
+      "α-glucosidase",
+      "molecular docking"
+    ]
+  },
+  "th": {
+    "title": "การจัดลำดับความสำคัญของสารในรำข้าวไรซ์เบอร์รี่ต่อเอนไซม์แอลฟา-กลูโคซิเดสและแอลฟา-อะไมเลสของมนุษย์ด้วยการจำลองการจับโมเลกุล เพื่อเพิ่มมูลค่าผลพลอยได้จากการสีข้าว",
+    "kw_label": "คำสำคัญ",
+    "authors": [
+      {
+        "name": "พุฒิธาดา พฤฒชยากุล",
+        "aff": 1,
+        "presenter": true,
+        "corresponding": true
+      }
+    ],
+    "affiliations": [
+      "โรงเรียนบดินทรเดชา (สิงห์ สิงหเสนี) กรุงเทพมหานคร ประเทศไทย"
+    ],
+    "sections": [
+      [
+        "หลักการและเหตุผล",
+        "รำข้าวไรซ์เบอร์รี่เป็นผลพลอยได้มูลค่าต่ำจากการสีข้าวของไทย ประกอบด้วยแอนโทไซยานิน แกมมา-โอริซานอล วิตามินอี และกรดฟีนอลิก มีรายงานการทดลองในหลอดทดลองว่าแอนโทไซยานินจากข้าวสียับยั้งเอนไซม์ย่อยแป้งคือแอลฟา-กลูโคซิเดสและแอลฟา-อะไมเลสได้ แต่ยังไม่ทราบว่าควรสกัดและทดสอบสารตัวใดก่อน เพราะยังไม่เคยมีการเปรียบเทียบสารเหล่านี้ด้วยกันเองบนเอนไซม์ของมนุษย์"
+      ],
+      [
+        "วัตถุประสงค์",
+        "เพื่อจัดลำดับความสำคัญของสาร 11 ชนิดที่มีรายงานในรำข้าวไรซ์เบอร์รี่ ตามการจับที่ทำนายได้กับเอนไซม์มอลเทส-กลูโคอะไมเลส (MGAM) และแอลฟา-อะไมเลสจากตับอ่อน (HPA) ของมนุษย์ ร่วมกับความสามารถในการละลายที่ส่วนผสมอาหารจำเป็นต้องมี"
+      ],
+      [
+        "วิธีการศึกษา",
+        "เตรียมโครงสร้าง MGAM (PDB 2QMJ) และ HPA (PDB 3BAJ) ที่ pH 7.4 แล้วทำ molecular docking เข้าตำแหน่งจับของอะคาร์โบสด้วย AutoDock Vina 1.2.7 (exhaustiveness 16 ทำซ้ำอิสระ 3 รอบ รวม 78 การทดลอง) ตรวจสอบความถูกต้องด้วยการ re-docking อะคาร์โบสจากผลึก พร้อมวิเคราะห์กรดอะมิโนที่สัมผัส ประสิทธิภาพการจับต่ออะตอม และสมบัติทางเคมีกายภาพ"
+      ],
+      [
+        "ผลการศึกษา",
+        "อะคาร์โบสที่ re-dock กลับเข้าตำแหน่งเดิมในผลึก (RMSD 2.04–2.06 อังสตรอม; −7.81 กิโลแคลอรีต่อโมลบน MGAM และ −8.69 บน HPA) เอสเทอร์ของแกมมา-โอริซานอลจับแน่นที่สุด (ไซโคลอาร์ทีนิลเฟรูเลต −8.87 ± 0.12 บน MGAM และ −10.52 ± 0.09 บน HPA) แต่ชอบไขมันสูงมาก (logP > 10) รองลงมาคือไซยานิดิน-3-โอ-กลูโคไซด์ (−7.71 ± 0.02; −8.09 ± 0.02) และพีโอนิดิน-3-โอ-กลูโคไซด์ (−7.64; −8.09) ซึ่งสร้างพันธะไฮโดรเจนกับกรดอะมิโนเร่งปฏิกิริยา Asp443 และ Asp542 ของ MGAM และ Asp197 และ Glu233 ของ HPA ทั้งยังเป็นสารอันดับต้นเพียงกลุ่มเดียวที่ละลายน้ำได้ (logP < 0.7) ส่วนกรดฟีนอลิกจับได้อ่อน (−6.6 ถึง −5.6)"
+      ],
+      [
+        "สรุปผล",
+        "ในกลุ่มสารที่ศึกษา แอนโทไซยานินมีทั้งค่าการจับที่ทำนายได้สูงและละลายน้ำได้เหมาะกับการใช้ในอาหาร ต่างจากสารที่จับแน่นที่สุด ทั้งนี้ค่า docking เป็นการจัดลำดับการจับที่ทำนายได้ ไม่สามารถบอกความแรงในการยับยั้งหรือความจำเพาะต่อเอนไซม์ ซึ่งต้องยืนยันด้วยการทดสอบเอนไซม์แต่ละตัว"
+      ],
+      [
+        "การนำไปประยุกต์ใช้",
+        "ผลการจัดลำดับชี้ว่าควรเลือกส่วนสกัดน้ำที่เป็นกรดซึ่งมีแอนโทไซยานินสูง แทนที่จะใช้รำทั้งหมดหรือส่วนน้ำมัน ไปพัฒนาต่อ และกำหนดรูปแบบการทดสอบค่า IC50 บนเอนไซม์ทั้งสองตัวที่ต้องทำต่อไป"
+      ]
+    ],
+    "keywords": [
+      "รำข้าวไรซ์เบอร์รี่",
+      "แอนโทไซยานิน",
+      "แกมมา-โอริซานอล",
+      "แอลฟา-กลูโคซิเดส",
+      "การจำลองการจับโมเลกุล"
+    ]
+  }
+}

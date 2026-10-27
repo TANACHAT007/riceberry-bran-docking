@@ -1,0 +1,222 @@
+<title>Riceberry Selectivity Map</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=IBM+Plex+Sans+Thai:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap">
+<style>
+/* Layout: lab bench — big rotating 3D pocket on the left, ranked compound "rice grains" on the right, methods + drug-likeness below */
+:root{
+  --bg:#f7f4ff; --card:#ffffff; --ink:#26193d; --muted:#6d6283; --line:#e6defa;
+  --berry:#7a3fd1; --berry-soft:#efe6ff; --leaf:#1fae6b; --leaf-soft:#ddf7ea; --sun:#ffb21f; --pink:#ff5f8f;
+  --view:#fbfaff;
+  --display:"Bricolage Grotesque","IBM Plex Sans Thai",system-ui,sans-serif;
+  --body:"IBM Plex Sans Thai",system-ui,sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#150f22; --card:#1f1731; --ink:#f1ebff; --muted:#a99cc4; --line:#33284a;
+  --berry:#b58cff; --berry-soft:#2d2147; --leaf:#4fdc98; --leaf-soft:#173a2b; --sun:#ffc552; --pink:#ff86aa; --view:#120c1d; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#150f22; --card:#1f1731; --ink:#f1ebff; --muted:#a99cc4; --line:#33284a;
+  --berry:#b58cff; --berry-soft:#2d2147; --leaf:#4fdc98; --leaf-soft:#173a2b; --sun:#ffc552; --pink:#ff86aa; --view:#120c1d; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:15px;line-height:1.6;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:28px 48px}
+.wrap{max-width:1180px;margin:0 auto;display:grid;gap:22px}
+h1,h2{font-family:var(--display);text-wrap:balance;margin:0;line-height:1.1}
+h1{font-size:clamp(28px,4.4vw,46px);font-weight:800;letter-spacing:-.02em}
+h1 em{font-style:normal;color:var(--berry)}
+h2{font-size:20px;font-weight:700}
+.eyebrow{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:600}
+.lede{color:var(--muted);max-width:68ch;margin:8px 0 0}
+header{display:grid;gap:6px}
+.grain{display:inline-block;width:14px;height:22px;border-radius:50%;background:var(--berry);transform:rotate(25deg);margin-right:8px;vertical-align:-3px;animation:bob 3s ease-in-out infinite}
+@keyframes bob{50%{transform:rotate(-10deg) translateY(-3px)}}
+.bench{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:18px}
+@media (max-width:860px){.bench{grid-template-columns:1fr}}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:16px;min-width:0}
+.viewer-box{position:relative;width:100%;max-width:100%;aspect-ratio:4/3;border-radius:16px;overflow:hidden;background:var(--view)}
+#viewer{position:absolute;inset:0}
+.toolbar{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:12px}
+.seg{display:inline-flex;background:var(--berry-soft);border-radius:999px;padding:4px}
+.seg button,.chipbtn{font:inherit;font-weight:600;border:0;cursor:pointer;border-radius:999px;padding:6px 14px;background:transparent;color:var(--berry);transition:transform .15s,background .2s}
+.seg button[aria-pressed="true"]{background:var(--berry);color:var(--card)}
+.chipbtn{background:var(--berry-soft)}
+.chipbtn[aria-pressed="true"]{background:var(--leaf);color:var(--card)}
+button:hover{transform:translateY(-1px)} button:active{transform:scale(.96)}
+button:focus-visible,.row:focus-visible{outline:3px solid var(--sun);outline-offset:2px}
+.caption{margin-top:12px;display:grid;gap:8px}
+.caption .name{font-family:var(--display);font-size:22px;font-weight:700}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{font-family:var(--mono);font-size:12px;padding:3px 9px;border-radius:999px;background:var(--berry-soft);color:var(--ink)}
+.chip.cat{background:var(--sun);color:#2a1a00}
+.chip.hb{background:var(--leaf-soft);color:var(--ink);box-shadow:inset 0 0 0 1.5px var(--leaf)}
+.legend{display:flex;flex-wrap:wrap;gap:12px;font-size:12px;color:var(--muted)}
+.legend i{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:5px;vertical-align:-1px}
+.list{display:grid;gap:6px}
+.row{display:grid;grid-template-columns:22px minmax(0,1fr) auto;gap:10px;align-items:center;padding:8px 10px;border-radius:14px;cursor:pointer;border:1.5px solid transparent;transition:background .2s,border-color .2s,transform .15s}
+.row:hover{background:var(--berry-soft);transform:translateX(2px)}
+.row[aria-selected="true"]{border-color:var(--berry);background:var(--berry-soft)}
+.rank{font-family:var(--mono);font-size:12px;color:var(--muted)}
+.lname{font-weight:600;font-size:14px;overflow-wrap:anywhere}
+.bar{height:7px;border-radius:999px;background:var(--line);margin-top:4px;overflow:hidden}
+.bar span{display:block;height:100%;border-radius:999px;background:var(--berry);transition:width .6s cubic-bezier(.3,1.4,.5,1)}
+.row.ctrl .bar span{background:var(--pink)}
+.score{font-family:var(--mono);font-variant-numeric:tabular-nums;font-size:14px;text-align:right}
+.score small{display:block;color:var(--muted);font-size:11px}
+.tag{font-size:10px;font-weight:700;letter-spacing:.06em;padding:1px 7px;border-radius:999px;background:var(--pink);color:var(--card);margin-left:6px;vertical-align:1px}
+.tag.win{background:var(--leaf)}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px}
+.facts{display:grid;gap:10px;margin:12px 0 0;padding:0;list-style:none}
+.facts li{display:grid;grid-template-columns:120px minmax(0,1fr);gap:10px;font-size:14px}
+.facts b{color:var(--muted);font-weight:500}
+.tablebox{overflow-x:auto;margin-top:12px}
+table{border-collapse:collapse;width:100%;font-size:13px;min-width:640px}
+th,td{padding:7px 10px;text-align:right;border-bottom:1px solid var(--line);font-variant-numeric:tabular-nums}
+th:first-child,td:first-child{text-align:left}
+th{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:600}
+td.ok{color:var(--leaf);font-weight:600} td.no{color:var(--pink);font-weight:600}
+.note{font-size:13px;color:var(--muted);max-width:75ch}
+.hint{position:absolute;left:12px;bottom:10px;font-size:12px;color:var(--muted);background:var(--card);padding:3px 10px;border-radius:999px;pointer-events:none}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+
+<div class="wrap">
+  <header>
+    <div class="eyebrow"><span class="grain"></span>INMU 50th · Food Sciences &amp; Food Chemistry · in silico</div>
+    <h1>สารไหนใน<em>รำข้าวไรซ์เบอร์รี่</em> จับถูกเอนไซม์</h1>
+    <p class="lede">ยา acarbose ยับยั้ง α-amylase แรงเกินไป แป้งที่ไม่ถูกย่อยจึงไปหมักในลำไส้ใหญ่จนท้องอืด ส่วนผสมอาหารที่ดีจึงควรจับ <b>α-glucosidase แน่น แต่ปล่อย α-amylase ไว้</b> หน้านี้คือผล docking สาร 11 ชนิดจากรำข้าวสีม่วงบนเอนไซม์มนุษย์ทั้งสองตัว (MGAM จาก PDB 2QMJ และ HPA จาก PDB 3BAJ) สารที่ติดป้ายสีเขียวคือสารที่เข้าเกณฑ์นี้ กดชื่อสารเพื่อหมุนดูว่าเกาะกรดอะมิโนตัวไหน</p>
+  </header>
+
+  <section class="bench">
+    <div class="panel">
+      <div class="toolbar">
+        <div class="seg" role="group" aria-label="เลือกเอนไซม์">
+          <button id="t-MGAM" aria-pressed="true" data-t="MGAM">α-Glucosidase</button>
+          <button id="t-HPA" aria-pressed="false" data-t="HPA">α-Amylase</button>
+        </div>
+        <button class="chipbtn" id="btn-surf" aria-pressed="false">พื้นผิวโพรง</button>
+        <button class="chipbtn" id="btn-xtal" aria-pressed="false">acarbose จากผลึก</button>
+        <button class="chipbtn" id="btn-spin" aria-pressed="true">หมุน</button>
+      </div>
+      <div class="viewer-box"><div id="viewer"></div><span class="hint">ลากเพื่อหมุน · scroll เพื่อซูม</span></div>
+      <div class="caption">
+        <div class="name" id="cap-name">—</div>
+        <div class="legend">
+          <span><i style="background:var(--sun)"></i>กรดอะมิโนเร่งปฏิกิริยา</span>
+          <span><i style="background:var(--leaf)"></i>ระยะพันธะไฮโดรเจน ≤ 3.5 Å</span>
+          <span><i style="background:var(--berry-soft)"></i>สัมผัสอื่น ≤ 4 Å</span>
+          <span><i style="background:var(--leaf)"></i>ป้าย "เข้าเกณฑ์" = จับ α-glucosidase ได้เทียบเท่าหรือดีกว่า acarbose และจับ α-amylase อ่อนกว่า</span>
+        </div>
+        <div class="chips" id="cap-chips"></div>
+      </div>
+    </div>
+
+    <div class="panel">
+      <h2 id="list-title">อันดับพลังงานการจับ</h2>
+      <p class="note" style="margin:4px 0 10px">ค่าเฉลี่ย ± SD จาก 3 รอบ (seed ต่างกัน) หน่วย kcal/mol ยิ่งติดลบมากยิ่งจับแน่น</p>
+      <div class="list" id="list" role="listbox" aria-label="สารที่ทดสอบ"></div>
+    </div>
+  </section>
+
+  <section class="grid2">
+    <div class="panel">
+      <h2>วิธีการ</h2>
+      <ul class="facts" id="methods"></ul>
+    </div>
+    <div class="panel">
+      <h2>ตรวจความถูกต้อง</h2>
+      <ul class="facts" id="valid"></ul>
+      <p class="note" style="margin-top:12px">ผลนี้เป็นการคำนวณ ยังไม่ใช่ผลทดลองในหลอดทดลอง ขั้นต่อไปคือวัดค่า IC<sub>50</sub> ของสารสกัดรำไรซ์เบอร์รี่จริง</p>
+    </div>
+  </section>
+
+  <section class="panel">
+    <h2>ความเหมือนยา (Lipinski / Veber)</h2>
+    <div class="tablebox"><table id="dl"></table></div>
+  </section>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/3dmol@2.4.2/build/3Dmol-min.js"></script>
+<script>
+const DATA = /*DATA*/null;
+const TH = {"acarbose":"Acarbose (ยาควบคุม)","cyanidin-3-O-glucoside":"Cyanidin-3-O-glucoside","peonidin-3-O-glucoside":"Peonidin-3-O-glucoside","protocatechuic acid":"Protocatechuic acid","ferulic acid":"Ferulic acid","p-coumaric acid":"p-Coumaric acid","vanillic acid":"Vanillic acid","cycloartenyl ferulate":"Cycloartenyl ferulate (γ-oryzanol)","24-methylenecycloartanyl ferulate":"24-Methylenecycloartanyl ferulate (γ-oryzanol)","gamma-tocotrienol":"γ-Tocotrienol","alpha-tocopherol":"α-Tocopherol","quercetin":"Quercetin"};
+const css = n => getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+let tgt = "MGAM", lig = null, surf = false, xtal = false, spin = true, viewer = null;
+
+// target profile: at least as tight as crystal-conformer acarbose on α-glucosidase, and weaker on α-amylase
+function selective(x){
+  const a = DATA.rows.find(r=>r.ligand==="acarbose");
+  const xtal = Math.min(...DATA.validation.MGAM.redock.map(r=>r.affinity));
+  return x[tgt].mean - (tgt==="MGAM" ? xtal : a.HPA.mean) <= 0.2 && x.HPA.mean - a.HPA.mean > 0;
+}
+
+function rows(){ return DATA.rows.slice().sort((a,b)=>a[tgt].mean-b[tgt].mean); }
+
+function renderList(){
+  const r = rows(), min = Math.min(...r.map(x=>x[tgt].mean));
+  document.getElementById("list").innerHTML = r.map((x,i)=>{
+    const s=x[tgt], ctrl=x.ligand==="acarbose", beat=!ctrl && selective(x);
+    return `<div class="row${ctrl?" ctrl":""}" role="option" tabindex="0" data-l="${x.ligand}" aria-selected="${x.ligand===lig}">
+      <span class="rank">${i+1}</span>
+      <div><div class="lname">${TH[x.ligand]}${ctrl?'<span class="tag">CONTROL</span>':""}${beat?'<span class="tag win">เข้าเกณฑ์</span>':""}</div>
+      <div class="bar"><span style="width:${(s.mean/min*100).toFixed(1)}%"></span></div></div>
+      <div class="score">${s.mean.toFixed(2)}<small>± ${s.sd.toFixed(2)}</small></div></div>`;
+  }).join("");
+  document.querySelectorAll(".row").forEach(el=>{
+    const pick=()=>{lig=el.dataset.l;renderList();draw();};
+    el.onclick=pick; el.onkeydown=e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();pick();}};
+  });
+}
+
+function draw(){
+  const T = DATA.web[tgt], x = DATA.rows.find(r=>r.ligand===lig), s = x[tgt];
+  if(!viewer) viewer = $3Dmol.createViewer("viewer",{backgroundColor:css("--view")});
+  viewer.clear(); viewer.setBackgroundColor(css("--view"));
+  const p = viewer.addModel(T.pocket,"pdb");
+  p.setStyle({},{cartoon:{color:css("--line"),opacity:.85,thickness:.3}});
+  const num = c=>parseInt(c.slice(3));
+  const cat = s.catalytic_hits.map(num), hb = s.hbond_res.map(num), near = s.contacts.map(num);
+  p.setStyle({resi:near},{cartoon:{color:css("--line")},stick:{radius:.13,colorscheme:{prop:"elem",map:{C:css("--muted"),O:"#e64a4a",N:"#3c6dff",S:"#e0b000"}}}});
+  p.setStyle({resi:hb},{cartoon:{color:css("--line")},stick:{radius:.17,colorscheme:{prop:"elem",map:{C:css("--leaf"),O:"#e64a4a",N:"#3c6dff",S:"#e0b000"}}}});
+  p.setStyle({resi:cat},{cartoon:{color:css("--line")},stick:{radius:.2,colorscheme:{prop:"elem",map:{C:css("--sun"),O:"#e64a4a",N:"#3c6dff",S:"#e0b000"}}}});
+  if(surf) viewer.addSurface($3Dmol.SurfaceType.VDW,{opacity:.55,color:css("--berry-soft")},{model:p,within:{distance:9,sel:{hetflag:false,resi:near}}});
+  if(xtal){ const m=viewer.addModel(T.xtal,"pdb"); m.setStyle({},{stick:{radius:.12,color:css("--pink"),opacity:.6}}); }
+  const L = viewer.addModel(DATA.web.poses[tgt][lig],"mol");
+  L.setStyle({},{stick:{radius:.26,colorscheme:{prop:"elem",map:{C:css("--berry"),O:"#e64a4a",N:"#3c6dff",H:"#ffffff"}}}});
+  L.setStyle({elem:"H"},{});
+  viewer.zoomTo({model:L}); viewer.zoom(.75); viewer.spin(spin?"y":false,.6); viewer.render();
+  document.getElementById("cap-name").textContent = `${TH[lig]} · ${s.best.toFixed(1)} kcal/mol · LE ${s.LE.toFixed(2)}`;
+  document.getElementById("cap-chips").innerHTML = s.contacts.map(c=>{
+    const k = s.catalytic_hits.includes(c)?"chip cat":s.hbond_res.includes(c)?"chip hb":"chip";
+    return `<span class="${k}">${c[0]}${c.slice(1,3).toLowerCase()}${c.slice(3)}</span>`;}).join("");
+}
+
+function setTarget(t){
+  tgt=t; document.querySelectorAll(".seg button").forEach(b=>b.setAttribute("aria-pressed",b.dataset.t===t));
+  document.getElementById("list-title").textContent = t==="MGAM"?"อันดับการจับ α-glucosidase (MGAM)":"อันดับการจับ α-amylase (HPA)";
+  if(!lig) lig = rows().find(r=>r.ligand!=="acarbose").ligand;
+  renderList(); draw();
+}
+function toggle(id,get,set){const b=document.getElementById(id);b.onclick=()=>{set(!get());b.setAttribute("aria-pressed",get());draw();};}
+
+function statics(){
+  const M = DATA.methods;
+  document.getElementById("methods").innerHTML = M.map(([k,v])=>`<li><b>${k}</b><span>${v}</span></li>`).join("");
+  const V = DATA.validation;
+  document.getElementById("valid").innerHTML = [
+    ["Redock RMSD", `เอา acarbose จากผลึก MGAM ออกแล้ว dock กลับ ห่างจากตำแหน่งเดิม ${V.MGAM.rmsd}–${Math.max(...V.MGAM.redock.map(r=>r.rmsd))} Å ทั้ง 3 seed (เกณฑ์ที่ใช้กันทั่วไปคือประมาณ 2 Å)`],
+    ["ซ้อนทับผลึก", `อะตอม acarbose ที่ docking ได้อยู่ในระยะ 2 Å ของลิแกนด์ในผลึก: MGAM ${Math.round(V.MGAM.xtal_overlap_2A*100)}%, HPA ${Math.round(V.HPA.xtal_overlap_2A*100)}%`],
+    ["ความซ้ำได้", "รัน 3 seed อิสระต่อคู่ ค่า SD แสดงในรายการ"]
+  ].map(([k,v])=>`<li><b>${k}</b><span>${v}</span></li>`).join("");
+  const cols=["MW","logP","HBD","HBA","TPSA","RotB"];
+  document.getElementById("dl").innerHTML = `<thead><tr><th>สาร</th>${cols.map(c=>`<th>${c}</th>`).join("")}<th>Lipinski</th><th>Veber</th></tr></thead><tbody>`+
+    DATA.rows.map(r=>`<tr><td>${TH[r.ligand]}</td>${cols.map(c=>`<td>${typeof r[c]==="number"&&!Number.isInteger(r[c])?r[c].toFixed(1):r[c]}</td>`).join("")}
+    <td class="${r.Lipinski_violations<=1?"ok":"no"}">${r.Lipinski_violations} ข้อ</td><td class="${r.Veber_pass?"ok":"no"}">${r.Veber_pass?"ผ่าน":"ไม่ผ่าน"}</td></tr>`).join("")+"</tbody>";
+}
+
+document.querySelectorAll(".seg button").forEach(b=>b.onclick=()=>setTarget(b.dataset.t));
+toggle("btn-surf",()=>surf,v=>surf=v); toggle("btn-xtal",()=>xtal,v=>xtal=v); toggle("btn-spin",()=>spin,v=>spin=v);
+if(matchMedia("(prefers-reduced-motion: reduce)").matches){spin=false;document.getElementById("btn-spin").setAttribute("aria-pressed","false");}
+statics(); setTarget("MGAM");
+matchMedia("(prefers-color-scheme: dark)").addEventListener("change",()=>draw());
+new MutationObserver(()=>draw()).observe(document.documentElement,{attributes:true,attributeFilter:["data-theme"]});
+</script>

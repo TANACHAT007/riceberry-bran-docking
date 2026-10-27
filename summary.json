@@ -1,0 +1,1051 @@
+{
+ "validation": {
+  "MGAM": {
+   "xtal_overlap_2A": 0.52,
+   "redock": [
+    {
+     "seed": 11,
+     "affinity": -7.81,
+     "rmsd": 2.04
+    },
+    {
+     "seed": 22,
+     "affinity": -7.8,
+     "rmsd": 2.06
+    },
+    {
+     "seed": 33,
+     "affinity": -7.78,
+     "rmsd": 2.06
+    }
+   ],
+   "rmsd": 2.04,
+   "rmsd_mean": 2.05
+  },
+  "HPA": {
+   "xtal_overlap_2A": 0.86
+  }
+ },
+ "rows": [
+  {
+   "ligand": "acarbose",
+   "cid": 41774,
+   "MW": 645.61,
+   "logP": -8.56,
+   "HBD": 14,
+   "HBA": 19,
+   "TPSA": 321.17,
+   "RotB": 9,
+   "HA": 44,
+   "Lipinski_violations": 3,
+   "Veber_pass": false,
+   "MGAM": {
+    "mean": -6.06,
+    "sd": 0.01,
+    "best": -6.07,
+    "LE": 0.138,
+    "contacts": [
+     "ASP203",
+     "THR204",
+     "THR205",
+     "TYR299",
+     "TRP406",
+     "MET444",
+     "ARG526",
+     "ASP542",
+     "PHE575",
+     "ALA576",
+     "LEU577",
+     "GLN603",
+     "TYR605"
+    ],
+    "hbond_res": [
+     "ASP203",
+     "THR205",
+     "ARG526",
+     "ASP542",
+     "TYR605"
+    ],
+    "catalytic_hits": [
+     "ASP203",
+     "ASP542",
+     "PHE575",
+     "TRP406"
+    ],
+    "pose": "MGAM__acarbose__s11.pdbqt"
+   },
+   "HPA": {
+    "mean": -8.69,
+    "sd": 0.01,
+    "best": -8.7,
+    "LE": 0.198,
+    "contacts": [
+     "ILE51",
+     "TRP59",
+     "TYR62",
+     "GLN63",
+     "HIS101",
+     "GLY104",
+     "VAL107",
+     "TYR151",
+     "LEU162",
+     "THR163",
+     "GLY164",
+     "LEU165",
+     "ARG195",
+     "ASP197",
+     "ALA198",
+     "LYS200",
+     "HIS201",
+     "GLU233",
+     "ILE235",
+     "HIS299",
+     "ASP300"
+    ],
+    "hbond_res": [
+     "TRP59",
+     "TYR62",
+     "GLN63",
+     "THR163",
+     "LYS200",
+     "GLU233",
+     "ILE235",
+     "ASP300"
+    ],
+    "catalytic_hits": [
+     "ASP197",
+     "ASP300",
+     "GLU233",
+     "TRP59",
+     "TYR62"
+    ],
+    "pose": "HPA__acarbose__s33.pdbqt"
+   }
+  },
+  {
+   "ligand": "cyanidin-3-O-glucoside",
+   "cid": 441667,
+   "MW": 449.39,
+   "logP": 0.38,
+   "HBD": 8,
+   "HBA": 10,
+   "TPSA": 191.6,
+   "RotB": 4,
+   "HA": 32,
+   "Lipinski_violations": 1,
+   "Veber_pass": false,
+   "MGAM": {
+    "mean": -7.71,
+    "sd": 0.02,
+    "best": -7.73,
+    "LE": 0.242,
+    "contacts": [
+     "ASP203",
+     "TYR299",
+     "ASP327",
+     "TRP406",
+     "TRP441",
+     "ASP443",
+     "MET444",
+     "SER448",
+     "PHE450",
+     "ARG526",
+     "TRP539",
+     "ASP542",
+     "PHE575",
+     "ALA576",
+     "HIS600",
+     "GLN603",
+     "TYR605"
+    ],
+    "hbond_res": [
+     "ASP203",
+     "ASP443",
+     "SER448",
+     "ARG526",
+     "ASP542",
+     "GLN603",
+     "TYR605"
+    ],
+    "catalytic_hits": [
+     "ASP203",
+     "ASP327",
+     "ASP443",
+     "ASP542",
+     "PHE575",
+     "TRP406"
+    ],
+    "pose": "MGAM__cyanidin_3_O_glucoside__s33.pdbqt"
+   },
+   "HPA": {
+    "mean": -8.09,
+    "sd": 0.02,
+    "best": -8.1,
+    "LE": 0.253,
+    "contacts": [
+     "TRP59",
+     "TYR62",
+     "GLN63",
+     "LEU162",
+     "THR163",
+     "LEU165",
+     "ARG195",
+     "ASP197",
+     "ALA198",
+     "GLU233",
+     "HIS299",
+     "ASP300",
+     "HIS305"
+    ],
+    "hbond_res": [
+     "TRP59",
+     "GLN63",
+     "THR163",
+     "ARG195",
+     "ASP197",
+     "GLU233",
+     "ASP300",
+     "HIS305"
+    ],
+    "catalytic_hits": [
+     "ASP197",
+     "ASP300",
+     "GLU233",
+     "HIS305",
+     "TRP59",
+     "TYR62"
+    ],
+    "pose": "HPA__cyanidin_3_O_glucoside__s33.pdbqt"
+   }
+  },
+  {
+   "ligand": "peonidin-3-O-glucoside",
+   "cid": 14311152,
+   "MW": 463.42,
+   "logP": 0.68,
+   "HBD": 7,
+   "HBA": 10,
+   "TPSA": 180.6,
+   "RotB": 5,
+   "HA": 33,
+   "Lipinski_violations": 1,
+   "Veber_pass": false,
+   "MGAM": {
+    "mean": -7.64,
+    "sd": 0.01,
+    "best": -7.65,
+    "LE": 0.232,
+    "contacts": [
+     "ASP203",
+     "THR204",
+     "TYR299",
+     "ASP327",
+     "TRP406",
+     "ASP443",
+     "MET444",
+     "SER448",
+     "PHE450",
+     "ARG526",
+     "ASP542",
+     "PHE575",
+     "ALA576",
+     "HIS600",
+     "GLY602",
+     "GLN603",
+     "TYR605"
+    ],
+    "hbond_res": [
+     "ASP203",
+     "ASP327",
+     "TRP406",
+     "ASP443",
+     "ARG526",
+     "ASP542",
+     "GLN603",
+     "TYR605"
+    ],
+    "catalytic_hits": [
+     "ASP203",
+     "ASP327",
+     "ASP443",
+     "ASP542",
+     "PHE575",
+     "TRP406"
+    ],
+    "pose": "MGAM__peonidin_3_O_glucoside__s33.pdbqt"
+   },
+   "HPA": {
+    "mean": -8.09,
+    "sd": 0.01,
+    "best": -8.09,
+    "LE": 0.245,
+    "contacts": [
+     "TRP58",
+     "TYR62",
+     "GLN63",
+     "TYR151",
+     "LEU162",
+     "THR163",
+     "LEU165",
+     "ARG195",
+     "ASP197",
+     "GLU233",
+     "HIS299",
+     "ASP300",
+     "HIS305",
+     "GLY306"
+    ],
+    "hbond_res": [
+     "GLN63",
+     "ARG195",
+     "ASP197",
+     "GLU233",
+     "HIS299",
+     "HIS305"
+    ],
+    "catalytic_hits": [
+     "ASP197",
+     "ASP300",
+     "GLU233",
+     "HIS305",
+     "TYR62"
+    ],
+    "pose": "HPA__peonidin_3_O_glucoside__s22.pdbqt"
+   }
+  },
+  {
+   "ligand": "protocatechuic acid",
+   "cid": 72,
+   "MW": 154.12,
+   "logP": 0.8,
+   "HBD": 3,
+   "HBA": 3,
+   "TPSA": 77.76,
+   "RotB": 1,
+   "HA": 11,
+   "Lipinski_violations": 0,
+   "Veber_pass": true,
+   "MGAM": {
+    "mean": -5.9,
+    "sd": 0.01,
+    "best": -5.9,
+    "LE": 0.536,
+    "contacts": [
+     "ASP203",
+     "TYR299",
+     "ASP327",
+     "TRP406",
+     "TRP441",
+     "ASP443",
+     "MET444",
+     "ARG526",
+     "TRP539",
+     "ASP542",
+     "PHE575",
+     "HIS600"
+    ],
+    "hbond_res": [
+     "ASP327",
+     "ASP443",
+     "ARG526",
+     "ASP542",
+     "HIS600"
+    ],
+    "catalytic_hits": [
+     "ASP203",
+     "ASP327",
+     "ASP443",
+     "ASP542",
+     "PHE575",
+     "TRP406"
+    ],
+    "pose": "MGAM__protocatechuic_acid__s11.pdbqt"
+   },
+   "HPA": {
+    "mean": -5.74,
+    "sd": 0.02,
+    "best": -5.76,
+    "LE": 0.524,
+    "contacts": [
+     "TRP58",
+     "TYR62",
+     "HIS101",
+     "LEU162",
+     "LEU165",
+     "ARG195",
+     "ASP197",
+     "GLU233",
+     "HIS299",
+     "ASP300"
+    ],
+    "hbond_res": [
+     "TYR62",
+     "HIS101",
+     "ARG195",
+     "ASP197",
+     "GLU233",
+     "HIS299",
+     "ASP300"
+    ],
+    "catalytic_hits": [
+     "ASP197",
+     "ASP300",
+     "GLU233",
+     "TYR62"
+    ],
+    "pose": "HPA__protocatechuic_acid__s11.pdbqt"
+   }
+  },
+  {
+   "ligand": "ferulic acid",
+   "cid": 445858,
+   "MW": 194.19,
+   "logP": 1.5,
+   "HBD": 2,
+   "HBA": 3,
+   "TPSA": 66.76,
+   "RotB": 3,
+   "HA": 14,
+   "Lipinski_violations": 0,
+   "Veber_pass": true,
+   "MGAM": {
+    "mean": -5.96,
+    "sd": 0.08,
+    "best": -6.05,
+    "LE": 0.432,
+    "contacts": [
+     "ASP203",
+     "TYR299",
+     "ASP327",
+     "TRP406",
+     "TRP441",
+     "ASP443",
+     "MET444",
+     "PHE450",
+     "ARG526",
+     "TRP539",
+     "ASP542",
+     "PHE575",
+     "HIS600"
+    ],
+    "hbond_res": [
+     "ASP203",
+     "ASP327",
+     "ASP542",
+     "HIS600"
+    ],
+    "catalytic_hits": [
+     "ASP203",
+     "ASP327",
+     "ASP443",
+     "ASP542",
+     "PHE575",
+     "TRP406"
+    ],
+    "pose": "MGAM__ferulic_acid__s22.pdbqt"
+   },
+   "HPA": {
+    "mean": -6.56,
+    "sd": 0.01,
+    "best": -6.56,
+    "LE": 0.469,
+    "contacts": [
+     "TRP58",
+     "TRP59",
+     "TYR62",
+     "GLN63",
+     "LEU162",
+     "LEU165",
+     "ARG195",
+     "ASP197",
+     "ALA198",
+     "GLU233",
+     "HIS299",
+     "ASP300"
+    ],
+    "hbond_res": [
+     "TRP59",
+     "GLN63",
+     "ASP197",
+     "ASP300"
+    ],
+    "catalytic_hits": [
+     "ASP197",
+     "ASP300",
+     "GLU233",
+     "TRP59",
+     "TYR62"
+    ],
+    "pose": "HPA__ferulic_acid__s11.pdbqt"
+   }
+  },
+  {
+   "ligand": "p-coumaric acid",
+   "cid": 637542,
+   "MW": 164.16,
+   "logP": 1.49,
+   "HBD": 2,
+   "HBA": 2,
+   "TPSA": 57.53,
+   "RotB": 2,
+   "HA": 12,
+   "Lipinski_violations": 0,
+   "Veber_pass": true,
+   "MGAM": {
+    "mean": -6.01,
+    "sd": 0.01,
+    "best": -6.02,
+    "LE": 0.502,
+    "contacts": [
+     "ASP203",
+     "TYR299",
+     "ASP327",
+     "TRP406",
+     "TRP441",
+     "ASP443",
+     "MET444",
+     "PHE450",
+     "ARG526",
+     "ASP542",
+     "PHE575",
+     "HIS600"
+    ],
+    "hbond_res": [
+     "ASP203",
+     "ASP327",
+     "HIS600"
+    ],
+    "catalytic_hits": [
+     "ASP203",
+     "ASP327",
+     "ASP443",
+     "ASP542",
+     "PHE575",
+     "TRP406"
+    ],
+    "pose": "MGAM__p_coumaric_acid__s33.pdbqt"
+   },
+   "HPA": {
+    "mean": -6.46,
+    "sd": 0.01,
+    "best": -6.47,
+    "LE": 0.539,
+    "contacts": [
+     "TRP58",
+     "TRP59",
+     "TYR62",
+     "GLN63",
+     "LEU165",
+     "ARG195",
+     "ASP197",
+     "HIS299",
+     "ASP300"
+    ],
+    "hbond_res": [
+     "TRP59",
+     "GLN63",
+     "ARG195",
+     "ASP197",
+     "HIS299",
+     "ASP300"
+    ],
+    "catalytic_hits": [
+     "ASP197",
+     "ASP300",
+     "TRP59",
+     "TYR62"
+    ],
+    "pose": "HPA__p_coumaric_acid__s22.pdbqt"
+   }
+  },
+  {
+   "ligand": "vanillic acid",
+   "cid": 8468,
+   "MW": 168.15,
+   "logP": 1.1,
+   "HBD": 2,
+   "HBA": 3,
+   "TPSA": 66.76,
+   "RotB": 2,
+   "HA": 12,
+   "Lipinski_violations": 0,
+   "Veber_pass": true,
+   "MGAM": {
+    "mean": -5.61,
+    "sd": 0.02,
+    "best": -5.63,
+    "LE": 0.469,
+    "contacts": [
+     "TYR299",
+     "ASP327",
+     "ILE364",
+     "TRP406",
+     "TRP441",
+     "ASP443",
+     "TRP539",
+     "ASP542",
+     "PHE575",
+     "HIS600"
+    ],
+    "hbond_res": [
+     "ASP327",
+     "ASP443",
+     "ASP542"
+    ],
+    "catalytic_hits": [
+     "ASP327",
+     "ASP443",
+     "ASP542",
+     "PHE575",
+     "TRP406"
+    ],
+    "pose": "MGAM__vanillic_acid__s22.pdbqt"
+   },
+   "HPA": {
+    "mean": -5.57,
+    "sd": 0.03,
+    "best": -5.59,
+    "LE": 0.466,
+    "contacts": [
+     "TRP58",
+     "TRP59",
+     "TYR62",
+     "LEU162",
+     "ARG195",
+     "ASP197",
+     "ALA198",
+     "GLU233",
+     "HIS299",
+     "ASP300"
+    ],
+    "hbond_res": [
+     "ARG195",
+     "ASP197",
+     "HIS299",
+     "ASP300"
+    ],
+    "catalytic_hits": [
+     "ASP197",
+     "ASP300",
+     "GLU233",
+     "TRP59",
+     "TYR62"
+    ],
+    "pose": "HPA__vanillic_acid__s22.pdbqt"
+   }
+  },
+  {
+   "ligand": "cycloartenyl ferulate",
+   "cid": 5282164,
+   "MW": 602.9,
+   "logP": 10.15,
+   "HBD": 1,
+   "HBA": 4,
+   "TPSA": 55.76,
+   "RotB": 8,
+   "HA": 44,
+   "Lipinski_violations": 2,
+   "Veber_pass": true,
+   "MGAM": {
+    "mean": -8.87,
+    "sd": 0.12,
+    "best": -8.95,
+    "LE": 0.203,
+    "contacts": [
+     "ARG202",
+     "ASP203",
+     "THR204",
+     "ASN207",
+     "ASN209",
+     "THR211",
+     "TYR299",
+     "ASP327",
+     "ILE328",
+     "ILE364",
+     "TRP406",
+     "ASP443",
+     "MET444",
+     "LEU473",
+     "ASP474",
+     "LYS480",
+     "ARG526",
+     "ASP542",
+     "PHE575"
+    ],
+    "hbond_res": [
+     "ASN207",
+     "ASN209",
+     "ASP474"
+    ],
+    "catalytic_hits": [
+     "ASP203",
+     "ASP327",
+     "ASP443",
+     "ASP542",
+     "PHE575",
+     "TRP406"
+    ],
+    "pose": "MGAM__cycloartenyl_ferulate__s11.pdbqt"
+   },
+   "HPA": {
+    "mean": -10.52,
+    "sd": 0.09,
+    "best": -10.6,
+    "LE": 0.241,
+    "contacts": [
+     "ILE51",
+     "ASN53",
+     "TRP59",
+     "TYR62",
+     "GLN63",
+     "TYR151",
+     "LEU162",
+     "THR163",
+     "LEU165",
+     "ASP197",
+     "ALA198",
+     "LYS200",
+     "HIS201",
+     "GLU233",
+     "ILE235",
+     "ASP300"
+    ],
+    "hbond_res": [
+     "TYR151",
+     "ASP197",
+     "LYS200",
+     "GLU233"
+    ],
+    "catalytic_hits": [
+     "ASP197",
+     "ASP300",
+     "GLU233",
+     "TRP59",
+     "TYR62"
+    ],
+    "pose": "HPA__cycloartenyl_ferulate__s11.pdbqt"
+   }
+  },
+  {
+   "ligand": "24-methylenecycloartanyl ferulate",
+   "cid": 9920169,
+   "MW": 616.93,
+   "logP": 10.39,
+   "HBD": 1,
+   "HBA": 4,
+   "TPSA": 55.76,
+   "RotB": 9,
+   "HA": 45,
+   "Lipinski_violations": 2,
+   "Veber_pass": true,
+   "MGAM": {
+    "mean": -8.53,
+    "sd": 0.16,
+    "best": -8.72,
+    "LE": 0.194,
+    "contacts": [
+     "THR205",
+     "ASN207",
+     "TYR299",
+     "ASP327",
+     "ILE364",
+     "TRP406",
+     "TRP441",
+     "ASP443",
+     "TRP539",
+     "ASP542",
+     "THR544",
+     "THR546",
+     "ASP549",
+     "PHE575",
+     "ALA576",
+     "LEU577",
+     "HIS600",
+     "TYR605"
+    ],
+    "hbond_res": [
+     "ASP327",
+     "ASP443"
+    ],
+    "catalytic_hits": [
+     "ASP327",
+     "ASP443",
+     "ASP542",
+     "PHE575",
+     "TRP406"
+    ],
+    "pose": "MGAM__24_methylenecycloartanyl_ferulate__s33.pdbqt"
+   },
+   "HPA": {
+    "mean": -9.92,
+    "sd": 0.05,
+    "best": -9.96,
+    "LE": 0.221,
+    "contacts": [
+     "ILE51",
+     "ASN53",
+     "TRP59",
+     "TYR62",
+     "GLN63",
+     "VAL107",
+     "TYR151",
+     "LEU162",
+     "THR163",
+     "LEU165",
+     "ASP197",
+     "ALA198",
+     "LYS200",
+     "HIS201",
+     "GLU233",
+     "ILE235",
+     "ASP300"
+    ],
+    "hbond_res": [
+     "TYR151",
+     "ASP197",
+     "LYS200",
+     "GLU233"
+    ],
+    "catalytic_hits": [
+     "ASP197",
+     "ASP300",
+     "GLU233",
+     "TRP59",
+     "TYR62"
+    ],
+    "pose": "HPA__24_methylenecycloartanyl_ferulate__s11.pdbqt"
+   }
+  },
+  {
+   "ligand": "gamma-tocotrienol",
+   "cid": 5282349,
+   "MW": 410.64,
+   "logP": 8.29,
+   "HBD": 1,
+   "HBA": 2,
+   "TPSA": 29.46,
+   "RotB": 9,
+   "HA": 30,
+   "Lipinski_violations": 1,
+   "Veber_pass": true,
+   "MGAM": {
+    "mean": -7.87,
+    "sd": 0.13,
+    "best": -7.98,
+    "LE": 0.266,
+    "contacts": [
+     "ASP203",
+     "TYR299",
+     "ASP327",
+     "ILE328",
+     "TRP406",
+     "PHE450",
+     "LYS480",
+     "ASP542",
+     "PHE575"
+    ],
+    "hbond_res": [],
+    "catalytic_hits": [
+     "ASP203",
+     "ASP327",
+     "ASP542",
+     "PHE575",
+     "TRP406"
+    ],
+    "pose": "MGAM__gamma_tocotrienol__s33.pdbqt"
+   },
+   "HPA": {
+    "mean": -8.91,
+    "sd": 0.49,
+    "best": -9.28,
+    "LE": 0.309,
+    "contacts": [
+     "TRP58",
+     "TRP59",
+     "TYR62",
+     "GLN63",
+     "TYR151",
+     "LEU162",
+     "ASP197",
+     "ALA198",
+     "LYS200",
+     "HIS201",
+     "GLU233",
+     "ILE235",
+     "ASP300"
+    ],
+    "hbond_res": [],
+    "catalytic_hits": [
+     "ASP197",
+     "ASP300",
+     "GLU233",
+     "TRP59",
+     "TYR62"
+    ],
+    "pose": "HPA__gamma_tocotrienol__s11.pdbqt"
+   }
+  },
+  {
+   "ligand": "alpha-tocopherol",
+   "cid": 14985,
+   "MW": 430.72,
+   "logP": 8.84,
+   "HBD": 1,
+   "HBA": 2,
+   "TPSA": 29.46,
+   "RotB": 12,
+   "HA": 31,
+   "Lipinski_violations": 1,
+   "Veber_pass": false,
+   "MGAM": {
+    "mean": -6.95,
+    "sd": 0.22,
+    "best": -7.16,
+    "LE": 0.231,
+    "contacts": [
+     "ASP203",
+     "THR204",
+     "THR205",
+     "TYR299",
+     "ASP327",
+     "ILE328",
+     "TRP406",
+     "ASP443",
+     "ARG526",
+     "ASP542",
+     "PHE575",
+     "ALA576",
+     "GLN603",
+     "TYR605"
+    ],
+    "hbond_res": [
+     "ASP203"
+    ],
+    "catalytic_hits": [
+     "ASP203",
+     "ASP327",
+     "ASP443",
+     "ASP542",
+     "PHE575",
+     "TRP406"
+    ],
+    "pose": "MGAM__alpha_tocopherol__s33.pdbqt"
+   },
+   "HPA": {
+    "mean": -7.62,
+    "sd": 0.11,
+    "best": -7.69,
+    "LE": 0.248,
+    "contacts": [
+     "TRP58",
+     "TRP59",
+     "TYR62",
+     "TYR151",
+     "LEU162",
+     "LEU165",
+     "ASP197",
+     "ALA198",
+     "LYS200",
+     "HIS201",
+     "GLU233",
+     "ILE235",
+     "HIS299",
+     "ASP300",
+     "HIS305"
+    ],
+    "hbond_res": [
+     "LYS200"
+    ],
+    "catalytic_hits": [
+     "ASP197",
+     "ASP300",
+     "GLU233",
+     "HIS305",
+     "TRP59",
+     "TYR62"
+    ],
+    "pose": "HPA__alpha_tocopherol__s22.pdbqt"
+   }
+  },
+  {
+   "ligand": "quercetin",
+   "cid": 5280343,
+   "MW": 302.24,
+   "logP": 1.99,
+   "HBD": 5,
+   "HBA": 7,
+   "TPSA": 131.36,
+   "RotB": 1,
+   "HA": 22,
+   "Lipinski_violations": 0,
+   "Veber_pass": true,
+   "MGAM": {
+    "mean": -7.46,
+    "sd": 0.01,
+    "best": -7.47,
+    "LE": 0.34,
+    "contacts": [
+     "ASP203",
+     "TYR299",
+     "ASP443",
+     "MET444",
+     "ARG526",
+     "ASP542",
+     "PHE575",
+     "GLN603",
+     "TYR605"
+    ],
+    "hbond_res": [
+     "ASP443",
+     "ARG526",
+     "ASP542",
+     "GLN603"
+    ],
+    "catalytic_hits": [
+     "ASP203",
+     "ASP443",
+     "ASP542",
+     "PHE575"
+    ],
+    "pose": "MGAM__quercetin__s11.pdbqt"
+   },
+   "HPA": {
+    "mean": -8.95,
+    "sd": 0.0,
+    "best": -8.95,
+    "LE": 0.407,
+    "contacts": [
+     "TRP59",
+     "TYR62",
+     "GLN63",
+     "HIS101",
+     "LEU165",
+     "ARG195",
+     "ASP197",
+     "GLU233",
+     "HIS299",
+     "ASP300",
+     "HIS305"
+    ],
+    "hbond_res": [
+     "TYR62",
+     "GLN63",
+     "ARG195",
+     "ASP197",
+     "GLU233",
+     "HIS299",
+     "ASP300"
+    ],
+    "catalytic_hits": [
+     "ASP197",
+     "ASP300",
+     "GLU233",
+     "HIS305",
+     "TRP59",
+     "TYR62"
+    ],
+    "pose": "HPA__quercetin__s11.pdbqt"
+   }
+  }
+ ]
+}

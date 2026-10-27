@@ -1,0 +1,506 @@
+[
+ {
+  "target": "MGAM",
+  "ligand": "protocatechuic acid",
+  "seed": 11,
+  "affinity": -5.9,
+  "pose": "MGAM__protocatechuic_acid__s11.pdbqt"
+ },
+ {
+  "target": "MGAM",
+  "ligand": "protocatechuic acid",
+  "seed": 22,
+  "affinity": -5.9,
+  "pose": "MGAM__protocatechuic_acid__s22.pdbqt"
+ },
+ {
+  "target": "MGAM",
+  "ligand": "protocatechuic acid",
+  "seed": 33,
+  "affinity": -5.89,
+  "pose": "MGAM__protocatechuic_acid__s33.pdbqt"
+ },
+ {
+  "target": "MGAM",
+  "ligand": "ferulic acid",
+  "seed": 11,
+  "affinity": -5.9,
+  "pose": "MGAM__ferulic_acid__s11.pdbqt"
+ },
+ {
+  "target": "MGAM",
+  "ligand": "ferulic acid",
+  "seed": 22,
+  "affinity": -6.05,
+  "pose": "MGAM__ferulic_acid__s22.pdbqt"
+ },
+ {
+  "target": "MGAM",
+  "ligand": "ferulic acid",
+  "seed": 33,
+  "affinity": -5.92,
+  "pose": "MGAM__ferulic_acid__s33.pdbqt"
+ },
+ {
+  "target": "MGAM",
+  "ligand": "p-coumaric acid",
+  "seed": 11,
+  "affinity": -6.0,
+  "pose": "MGAM__p_coumaric_acid__s11.pdbqt"
+ },
+ {
+  "target": "MGAM",
+  "ligand": "p-coumaric acid",
+  "seed": 22,
+  "affinity": -6.01,
+  "pose": "MGAM__p_coumaric_acid__s22.pdbqt"
+ },
+ {
+  "target": "MGAM",
+  "ligand": "p-coumaric acid",
+  "seed": 33,
+  "affinity": -6.02,
+  "pose": "MGAM__p_coumaric_acid__s33.pdbqt"
+ },
+ {
+  "target": "MGAM",
+  "ligand": "cyanidin-3-O-glucoside",
+  "seed": 11,
+  "affinity": -7.69,
+  "pose": "MGAM__cyanidin_3_O_glucoside__s11.pdbqt"
+ },
+ {
+  "target": "MGAM",
+  "ligand": "cyanidin-3-O-glucoside",
+  "seed": 33,
+  "affinity": -7.73,
+  "pose": "MGAM__cyanidin_3_O_glucoside__s33.pdbqt"
+ },
+ {
+  "target": "MGAM",
+  "ligand": "cyanidin-3-O-glucoside",
+  "seed": 22,
+  "affinity": -7.71,
+  "pose": "MGAM__cyanidin_3_O_glucoside__s22.pdbqt"
+ },
+ {
+  "target": "MGAM",
+  "ligand": "peonidin-3-O-glucoside",
+  "seed": 22,
+  "affinity": -7.63,
+  "pose": "MGAM__peonidin_3_O_glucoside__s22.pdbqt"
+ },
+ {
+  "target": "MGAM",
+  "ligand": "vanillic acid",
+  "seed": 11,
+  "affinity": -5.6,
+  "pose": "MGAM__vanillic_acid__s11.pdbqt"
+ },
+ {
+  "target": "MGAM",
+  "ligand": "peonidin-3-O-glucoside",
+  "seed": 33,
+  "affinity": -7.65,
+  "pose": "MGAM__peonidin_3_O_glucoside__s33.pdbqt"
+ },
+ {
+  "target": "MGAM",
+  "ligand": "peonidin-3-O-glucoside",
+  "seed": 11,
+  "affinity": -7.64,
+  "pose": "MGAM__peonidin_3_O_glucoside__s11.pdbqt"
+ },
+ {
+  "target": "MGAM",
+  "ligand": "vanillic acid",
+  "seed": 33,
+  "affinity": -5.61,
+  "pose": "MGAM__vanillic_acid__s33.pdbqt"
+ },
+ {
+  "target": "MGAM",
+  "ligand": "vanillic acid",
+  "seed": 22,
+  "affinity": -5.63,
+  "pose": "MGAM__vanillic_acid__s22.pdbqt"
+ },
+ {
+  "target": "MGAM",
+  "ligand": "gamma-tocotrienol",
+  "seed": 11,
+  "affinity": -7.73,
+  "pose": "MGAM__gamma_tocotrienol__s11.pdbqt"
+ },
+ {
+  "target": "MGAM",
+  "ligand": "cycloartenyl ferulate",
+  "seed": 11,
+  "affinity": -8.95,
+  "pose": "MGAM__cycloartenyl_ferulate__s11.pdbqt"
+ },
+ {
+  "target": "MGAM",
+  "ligand": "cycloartenyl ferulate",
+  "seed": 22,
+  "affinity": -8.92,
+  "pose": "MGAM__cycloartenyl_ferulate__s22.pdbqt"
+ },
+ {
+  "target": "MGAM",
+  "ligand": "cycloartenyl ferulate",
+  "seed": 33,
+  "affinity": -8.73,
+  "pose": "MGAM__cycloartenyl_ferulate__s33.pdbqt"
+ },
+ {
+  "target": "MGAM",
+  "ligand": "24-methylenecycloartanyl ferulate",
+  "seed": 22,
+  "affinity": -8.41,
+  "pose": "MGAM__24_methylenecycloartanyl_ferulate__s22.pdbqt"
+ },
+ {
+  "target": "MGAM",
+  "ligand": "gamma-tocotrienol",
+  "seed": 22,
+  "affinity": -7.91,
+  "pose": "MGAM__gamma_tocotrienol__s22.pdbqt"
+ },
+ {
+  "target": "MGAM",
+  "ligand": "24-methylenecycloartanyl ferulate",
+  "seed": 11,
+  "affinity": -8.47,
+  "pose": "MGAM__24_methylenecycloartanyl_ferulate__s11.pdbqt"
+ },
+ {
+  "target": "MGAM",
+  "ligand": "24-methylenecycloartanyl ferulate",
+  "seed": 33,
+  "affinity": -8.72,
+  "pose": "MGAM__24_methylenecycloartanyl_ferulate__s33.pdbqt"
+ },
+ {
+  "target": "MGAM",
+  "ligand": "quercetin",
+  "seed": 22,
+  "affinity": -7.45,
+  "pose": "MGAM__quercetin__s22.pdbqt"
+ },
+ {
+  "target": "MGAM",
+  "ligand": "quercetin",
+  "seed": 11,
+  "affinity": -7.47,
+  "pose": "MGAM__quercetin__s11.pdbqt"
+ },
+ {
+  "target": "MGAM",
+  "ligand": "quercetin",
+  "seed": 33,
+  "affinity": -7.46,
+  "pose": "MGAM__quercetin__s33.pdbqt"
+ },
+ {
+  "target": "MGAM",
+  "ligand": "gamma-tocotrienol",
+  "seed": 33,
+  "affinity": -7.98,
+  "pose": "MGAM__gamma_tocotrienol__s33.pdbqt"
+ },
+ {
+  "target": "MGAM",
+  "ligand": "alpha-tocopherol",
+  "seed": 11,
+  "affinity": -6.96,
+  "pose": "MGAM__alpha_tocopherol__s11.pdbqt"
+ },
+ {
+  "target": "MGAM",
+  "ligand": "alpha-tocopherol",
+  "seed": 22,
+  "affinity": -6.73,
+  "pose": "MGAM__alpha_tocopherol__s22.pdbqt"
+ },
+ {
+  "target": "MGAM",
+  "ligand": "alpha-tocopherol",
+  "seed": 33,
+  "affinity": -7.16,
+  "pose": "MGAM__alpha_tocopherol__s33.pdbqt"
+ },
+ {
+  "target": "HPA",
+  "ligand": "cyanidin-3-O-glucoside",
+  "seed": 11,
+  "affinity": -8.07,
+  "pose": "HPA__cyanidin_3_O_glucoside__s11.pdbqt"
+ },
+ {
+  "target": "HPA",
+  "ligand": "protocatechuic acid",
+  "seed": 11,
+  "affinity": -5.76,
+  "pose": "HPA__protocatechuic_acid__s11.pdbqt"
+ },
+ {
+  "target": "HPA",
+  "ligand": "protocatechuic acid",
+  "seed": 22,
+  "affinity": -5.75,
+  "pose": "HPA__protocatechuic_acid__s22.pdbqt"
+ },
+ {
+  "target": "HPA",
+  "ligand": "protocatechuic acid",
+  "seed": 33,
+  "affinity": -5.72,
+  "pose": "HPA__protocatechuic_acid__s33.pdbqt"
+ },
+ {
+  "target": "HPA",
+  "ligand": "ferulic acid",
+  "seed": 11,
+  "affinity": -6.56,
+  "pose": "HPA__ferulic_acid__s11.pdbqt"
+ },
+ {
+  "target": "HPA",
+  "ligand": "ferulic acid",
+  "seed": 22,
+  "affinity": -6.56,
+  "pose": "HPA__ferulic_acid__s22.pdbqt"
+ },
+ {
+  "target": "HPA",
+  "ligand": "cyanidin-3-O-glucoside",
+  "seed": 22,
+  "affinity": -8.09,
+  "pose": "HPA__cyanidin_3_O_glucoside__s22.pdbqt"
+ },
+ {
+  "target": "HPA",
+  "ligand": "cyanidin-3-O-glucoside",
+  "seed": 33,
+  "affinity": -8.1,
+  "pose": "HPA__cyanidin_3_O_glucoside__s33.pdbqt"
+ },
+ {
+  "target": "HPA",
+  "ligand": "ferulic acid",
+  "seed": 33,
+  "affinity": -6.55,
+  "pose": "HPA__ferulic_acid__s33.pdbqt"
+ },
+ {
+  "target": "HPA",
+  "ligand": "p-coumaric acid",
+  "seed": 11,
+  "affinity": -6.46,
+  "pose": "HPA__p_coumaric_acid__s11.pdbqt"
+ },
+ {
+  "target": "HPA",
+  "ligand": "p-coumaric acid",
+  "seed": 22,
+  "affinity": -6.47,
+  "pose": "HPA__p_coumaric_acid__s22.pdbqt"
+ },
+ {
+  "target": "HPA",
+  "ligand": "p-coumaric acid",
+  "seed": 33,
+  "affinity": -6.46,
+  "pose": "HPA__p_coumaric_acid__s33.pdbqt"
+ },
+ {
+  "target": "HPA",
+  "ligand": "vanillic acid",
+  "seed": 11,
+  "affinity": -5.53,
+  "pose": "HPA__vanillic_acid__s11.pdbqt"
+ },
+ {
+  "target": "HPA",
+  "ligand": "vanillic acid",
+  "seed": 22,
+  "affinity": -5.59,
+  "pose": "HPA__vanillic_acid__s22.pdbqt"
+ },
+ {
+  "target": "HPA",
+  "ligand": "vanillic acid",
+  "seed": 33,
+  "affinity": -5.59,
+  "pose": "HPA__vanillic_acid__s33.pdbqt"
+ },
+ {
+  "target": "HPA",
+  "ligand": "peonidin-3-O-glucoside",
+  "seed": 11,
+  "affinity": -8.08,
+  "pose": "HPA__peonidin_3_O_glucoside__s11.pdbqt"
+ },
+ {
+  "target": "HPA",
+  "ligand": "peonidin-3-O-glucoside",
+  "seed": 22,
+  "affinity": -8.09,
+  "pose": "HPA__peonidin_3_O_glucoside__s22.pdbqt"
+ },
+ {
+  "target": "HPA",
+  "ligand": "peonidin-3-O-glucoside",
+  "seed": 33,
+  "affinity": -8.09,
+  "pose": "HPA__peonidin_3_O_glucoside__s33.pdbqt"
+ },
+ {
+  "target": "HPA",
+  "ligand": "cycloartenyl ferulate",
+  "seed": 11,
+  "affinity": -10.6,
+  "pose": "HPA__cycloartenyl_ferulate__s11.pdbqt"
+ },
+ {
+  "target": "HPA",
+  "ligand": "cycloartenyl ferulate",
+  "seed": 22,
+  "affinity": -10.53,
+  "pose": "HPA__cycloartenyl_ferulate__s22.pdbqt"
+ },
+ {
+  "target": "HPA",
+  "ligand": "cycloartenyl ferulate",
+  "seed": 33,
+  "affinity": -10.42,
+  "pose": "HPA__cycloartenyl_ferulate__s33.pdbqt"
+ },
+ {
+  "target": "HPA",
+  "ligand": "gamma-tocotrienol",
+  "seed": 11,
+  "affinity": -9.28,
+  "pose": "HPA__gamma_tocotrienol__s11.pdbqt"
+ },
+ {
+  "target": "HPA",
+  "ligand": "24-methylenecycloartanyl ferulate",
+  "seed": 11,
+  "affinity": -9.96,
+  "pose": "HPA__24_methylenecycloartanyl_ferulate__s11.pdbqt"
+ },
+ {
+  "target": "HPA",
+  "ligand": "24-methylenecycloartanyl ferulate",
+  "seed": 22,
+  "affinity": -9.94,
+  "pose": "HPA__24_methylenecycloartanyl_ferulate__s22.pdbqt"
+ },
+ {
+  "target": "HPA",
+  "ligand": "quercetin",
+  "seed": 11,
+  "affinity": -8.95,
+  "pose": "HPA__quercetin__s11.pdbqt"
+ },
+ {
+  "target": "HPA",
+  "ligand": "24-methylenecycloartanyl ferulate",
+  "seed": 33,
+  "affinity": -9.87,
+  "pose": "HPA__24_methylenecycloartanyl_ferulate__s33.pdbqt"
+ },
+ {
+  "target": "HPA",
+  "ligand": "gamma-tocotrienol",
+  "seed": 22,
+  "affinity": -8.36,
+  "pose": "HPA__gamma_tocotrienol__s22.pdbqt"
+ },
+ {
+  "target": "HPA",
+  "ligand": "gamma-tocotrienol",
+  "seed": 33,
+  "affinity": -9.1,
+  "pose": "HPA__gamma_tocotrienol__s33.pdbqt"
+ },
+ {
+  "target": "HPA",
+  "ligand": "quercetin",
+  "seed": 22,
+  "affinity": -8.95,
+  "pose": "HPA__quercetin__s22.pdbqt"
+ },
+ {
+  "target": "HPA",
+  "ligand": "quercetin",
+  "seed": 33,
+  "affinity": -8.95,
+  "pose": "HPA__quercetin__s33.pdbqt"
+ },
+ {
+  "target": "HPA",
+  "ligand": "alpha-tocopherol",
+  "seed": 11,
+  "affinity": -7.5,
+  "pose": "HPA__alpha_tocopherol__s11.pdbqt"
+ },
+ {
+  "target": "HPA",
+  "ligand": "alpha-tocopherol",
+  "seed": 22,
+  "affinity": -7.69,
+  "pose": "HPA__alpha_tocopherol__s22.pdbqt"
+ },
+ {
+  "target": "HPA",
+  "ligand": "alpha-tocopherol",
+  "seed": 33,
+  "affinity": -7.68,
+  "pose": "HPA__alpha_tocopherol__s33.pdbqt"
+ },
+ {
+  "target": "MGAM",
+  "ligand": "acarbose",
+  "seed": 11,
+  "affinity": -6.07,
+  "pose": "MGAM__acarbose__s11.pdbqt"
+ },
+ {
+  "target": "MGAM",
+  "ligand": "acarbose",
+  "seed": 22,
+  "affinity": -6.05,
+  "pose": "MGAM__acarbose__s22.pdbqt"
+ },
+ {
+  "target": "MGAM",
+  "ligand": "acarbose",
+  "seed": 33,
+  "affinity": -6.06,
+  "pose": "MGAM__acarbose__s33.pdbqt"
+ },
+ {
+  "target": "HPA",
+  "ligand": "acarbose",
+  "seed": 11,
+  "affinity": -8.69,
+  "pose": "HPA__acarbose__s11.pdbqt"
+ },
+ {
+  "target": "HPA",
+  "ligand": "acarbose",
+  "seed": 22,
+  "affinity": -8.68,
+  "pose": "HPA__acarbose__s22.pdbqt"
+ },
+ {
+  "target": "HPA",
+  "ligand": "acarbose",
+  "seed": 33,
+  "affinity": -8.7,
+  "pose": "HPA__acarbose__s33.pdbqt"
+ }
+]

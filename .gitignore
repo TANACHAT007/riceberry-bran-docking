@@ -1,0 +1,7 @@
+.v11/
+build/
+preview/
+templates/
+__pycache__/
+*.pyc
+.DS_Store
