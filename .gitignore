@@ -5,3 +5,5 @@ templates/
 __pycache__/
 *.pyc
 .DS_Store
+labplan/
+submission/Lab_Plan_IC50_and_Request_Letter.pdf

@@ -39,6 +39,9 @@ def para(d, align=WD_ALIGN_PARAGRAPH.JUSTIFY, after=6):
 
 
 def block(d, L, font, title_size, body_size, small_size, upper):
+    for _ in range(2):                          # spacers: space-before is ignored at the top of a page,
+        sp = para(d, WD_ALIGN_PARAGRAPH.CENTER, 0)  # and the template's banner reaches 2.56 cm down the page
+        run(sp, "", font, 16)
     p = para(d, WD_ALIGN_PARAGRAPH.CENTER, 8)
     run(p, L["title"].upper().replace("Α", "α") if upper else L["title"], font, title_size, bold=True)
     p = para(d, WD_ALIGN_PARAGRAPH.CENTER, 0)

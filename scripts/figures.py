@@ -65,7 +65,8 @@ def selectivity_map():
         ax.errorbar(dx, dy, xerr=r["MGAM"]["sd"], yerr=r["HPA"]["sd"], fmt="none", ecolor="#555", lw=1, zorder=2)
         ax.scatter(dx, dy, s=330, color=GROUP.get(n, NAVY), marker="o" if sol else "s", edgecolor="white", lw=1.5, zorder=3)
         off = {"peonidin-3-O-glucoside": (0.08, -0.32), "cyanidin-3-O-glucoside": (0.08, 0.12), "p-coumaric acid": (0.08, -0.3),
-               "ferulic acid": (0.08, 0.1), "24-methylenecycloartanyl ferulate": (0.08, 0.12), "quercetin": (0.08, -0.3), "gamma-tocotrienol": (-0.75, 0.1)}.get(n, (0.08, 0.08))
+               "ferulic acid": (0.08, 0.1), "24-methylenecycloartanyl ferulate": (0.08, 0.12), "quercetin": (0.08, -0.3), "gamma-tocotrienol": (-0.75, 0.1),
+               "vanillic acid": (-0.62, 0.16), "protocatechuic acid": (0.08, -0.34)}.get(n, (0.08, 0.08))
         ax.text(dx + off[0], dy + off[1], LABEL[n], fontsize=16, zorder=4)
     ax.scatter(0, 0, s=320, marker="*", color=PINK, zorder=4); ax.text(0.08, -0.3, "Acarbose", color=PINK, fontsize=17, fontweight="bold")
     ax.set_xlim(-3.4, 1.0); ax.set_ylim(-2.3, 3.5)

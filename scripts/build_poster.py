@@ -140,16 +140,19 @@ def main(url=""):
     # ============ Row 3: the selectivity map (hero), contact map, findings ============
     y = 51.6
     yb = heading(sl, X0, y, W, "RESULTS  ·  RANKING THE BRAN")
-    wl = 29.0; xr3 = X0 + wl + 1.4; wr = W - wl - 1.4
+    wl = 31.0; xr3 = X0 + wl + 1.4; wr = W - wl - 1.4
     picture(sl, FIG / "selectivity.png", X0, yb, w=wl)
-    text(sl, X0, yb + 23.9, wl, 2.8, [[B("Fig. 1 "), N("Each constituent placed against acarbose on both enzymes (ΔΔG, mean of 3 seeds). "
+    text(sl, X0, yb + 25.6, wl, 3.4, [[B("Fig. 1 "), N("Each constituent placed against acarbose on both enzymes (ΔΔG, mean of 3 seeds). "
          "Circles dissolve in water, squares do not. The shaded area marks where a usable food candidate would sit.")]], size=24)
+    panel(sl, X0, yb + 29.4, wl, 4.6, PALE, BERRY)
+    text(sl, X0 + 0.9, yb + 29.9, wl - 1.8, 3.8, [[B("Only the anthocyanins fall in the shaded region: as good as acarbose "
+         "on α-glucosidase, milder on α-amylase, and soluble in water.", color=BERRY, size=27)]])
     picture(sl, FIG / "pose_MGAM_cyanidin_3_O_glucoside.png", xr3, yb, w=wr / 2 - 0.3)
     picture(sl, FIG / "pose_HPA_cyanidin_3_O_glucoside.png", xr3 + wr / 2 + 0.3, yb, w=wr / 2 - 0.3)
-    text(sl, xr3, yb + 13.6, wr, 2.8, [[B("Fig. 2 "), N("Cyanidin-3-O-glucoside (purple) in α-glucosidase (left) and α-amylase (right). "
+    text(sl, xr3, yb + 13.3, wr, 2.8, [[B("Fig. 2 "), N("Cyanidin-3-O-glucoside (purple) in α-glucosidase (left) and α-amylase (right). "
          "Gold = catalytic residues, green = hydrogen-bond partners.")]], size=24)
-    panel(sl, xr3, yb + 16.6, wr, 17.6, PALE, BERRY)
-    text(sl, xr3 + 0.9, yb + 17.0, wr - 1.8, 16.8, [
+    panel(sl, xr3, yb + 16.3, wr, 19.6, PALE, BERRY)
+    text(sl, xr3 + 0.9, yb + 16.7, wr - 1.8, 18.8, [
         [B("The tightest binder is not the usable one", color=GOLD, size=30)],
         [N(f"γ-Oryzanol esters topped the ranking (cycloartenyl ferulate {cf['MGAM']['mean']:.2f} / {cf['HPA']['mean']:.2f} kcal/mol)".replace("-", "\u2212")
            + ", but with logP > 10 they will not dissolve in the gut lumen, and they sit in the bran's oil fraction.")],
@@ -165,7 +168,7 @@ def main(url=""):
     ], size=25, space=0.38)
 
     # ============ Row 4: from screen to bench to product ============
-    y = 89.8
+    y = 91.2
     yb = heading(sl, X0, y, W, "FROM SCREEN TO PRODUCT", BERRY)
     boxes = [
         ("① Take this fraction", LEAF, [
@@ -184,14 +187,14 @@ def main(url=""):
     bw4 = (W - 2 * 1.0) / 3
     for i, (h, c, body) in enumerate(boxes):
         bx = X0 + i * (bw4 + 1.0)
-        panel(sl, bx, yb, bw4, 12.4, SOFT, c)
-        text(sl, bx + 0.8, yb + 0.5, bw4 - 1.6, 11.4, [[B(h, color=c, size=30)]] + body, size=25)
+        panel(sl, bx, yb, bw4, 11.6, SOFT, c)
+        text(sl, bx + 0.8, yb + 0.5, bw4 - 1.6, 10.6, [[B(h, color=c, size=30)]] + body, size=25)
 
     # ============ Row 5: conclusion + QR ============
-    y = 105.8
+    y = 106.4
     yb = heading(sl, X0, y, W, "CONCLUSION")
-    wq = 8.5
-    text(sl, X0, yb, W - wq - 1.5, 9.4, [
+    wq = 7.6
+    text(sl, X0, yb, W - wq - 2.5, 10.6, [
         [N("Scoring binding "), B("together with solubility", color=BERRY),
          N(" changes which molecule a food project should chase. The highest-scoring constituents of Riceberry bran, the "),
          B("γ-oryzanol esters"), N(", cannot dissolve where the enzymes work; the "), B("anthocyanins"),
@@ -203,9 +206,9 @@ def main(url=""):
     ], size=27)
     qx = X0 + W - wq
     picture(sl, FIG / "qr.png", qx, yb, w=wq)
-    text(sl, qx - 2.6, yb + 8.8, wq + 2.8, 2.0, [[B("Rotate the binding sites in 3D", size=23, color=NAVY)]], align=PP_ALIGN.CENTER)
+    text(sl, qx - 2.4, yb + 7.9, wq + 2.8, 1.9, [[B("Rotate the poses in 3D", size=22, color=NAVY)]], align=PP_ALIGN.CENTER)
 
-    text(sl, X0, 120.5, W, 3.2, [[B("Structures "), N("PDB 2QMJ (Sim et al., J Mol Biol 2008) and 3BAJ (Maurus et al., Biochemistry 2008).  "),
+    text(sl, X0, 120.8, W, 3.2, [[B("Structures "), N("PDB 2QMJ (Sim et al., J Mol Biol 2008) and 3BAJ (Maurus et al., Biochemistry 2008).  "),
         B("Software "), N("AutoDock Vina 1.2.7 (Eberhardt et al., JCIM 2021); Meeko; RDKit; PDBFixer. Ligands from PubChem.  "),
         B("Prior in vitro data "), N("Akkarachiyasit et al., Int J Mol Sci 2010;11:3387.  "),
         B("Acarbose tolerability "), N("US prescribing information.  All scripts and raw results via the QR link.")]], size=19)
