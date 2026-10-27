@@ -20,11 +20,11 @@
     "sections": [
       [
         "Rationale",
-        "Riceberry bran, a low-value by-product of Thai rice milling, contains anthocyanins, γ-oryzanol, vitamin E and phenolic acids. Anthocyanins from pigmented rice inhibit the starch-digesting enzymes α-glucosidase and α-amylase in vitro. Which constituent to extract and assay first is unresolved, as they have never been compared on the human enzymes."
+        "Riceberry bran, a low-value by-product of Thai rice milling, contains anthocyanins, γ-oryzanol, vitamin E and phenolic acids. Anthocyanins from pigmented rice inhibit the starch-digesting enzymes α-glucosidase and α-amylase in vitro. Which to extract and assay first is unresolved: they have never been compared on the human enzymes."
       ],
       [
         "Objective",
-        "To prioritise eleven reported Riceberry bran constituents by predicted binding to human maltase-glucoamylase (MGAM) and pancreatic α-amylase (HPA), alongside the solubility a food ingredient needs."
+        "To prioritise eleven Riceberry bran constituents by predicted binding to human maltase-glucoamylase (MGAM) and pancreatic α-amylase (HPA), alongside the solubility a food ingredient needs."
       ],
       [
         "Methods",
@@ -32,7 +32,7 @@
       ],
       [
         "Results",
-        "Re-docked acarbose reproduced its crystal pose (RMSD 2.04–2.06 Å; −7.81 kcal/mol on MGAM, −8.69 on HPA). γ-Oryzanol esters bound most tightly (cycloartenyl ferulate −8.87 ± 0.12 on MGAM, −10.52 ± 0.09 on HPA) but were strongly lipophilic (logP > 10). Cyanidin-3-O-glucoside (−7.71 ± 0.02; −8.09 ± 0.02) and peonidin-3-O-glucoside (−7.64; −8.09) ranked next, hydrogen-bonded the catalytic acids of both enzymes (Asp443/Asp542 and Asp197/Glu233), and were the only high-ranking compounds that were water-soluble (logP < 0.7)."
+        "Re-docked acarbose reproduced its crystal pose (RMSD 2.04–2.06 Å; −7.81 kcal/mol on MGAM, −8.69 on HPA). γ-Oryzanol esters bound most tightly (cycloartenyl ferulate −8.87 ± 0.12 on MGAM, −10.52 ± 0.09 on HPA) but were strongly lipophilic (logP > 10). Cyanidin-3-O-glucoside (−7.71 ± 0.02; −8.09 ± 0.02) and peonidin-3-O-glucoside (−7.64; −8.09) ranked next, hydrogen-bonded the catalytic acids of both enzymes (Asp443/Asp542 and Asp197/Glu233), and were the only water-soluble front-runners (logP < 0.7)."
       ],
       [
         "Conclusion",

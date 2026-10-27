@@ -66,11 +66,11 @@ def words(L):
 if __name__ == "__main__":
     en, th = A["en"], A["th"]
     d = blank(ROOT / "templates" / "en.docx")
-    block(d, en, "Arial", 12, 11, 11, True)
+    block(d, en, "Arial", 11, 11, 11, True)
     d.save(OUT / f"Abstract_{A['file_name']}_EN.docx")
     d = blank(ROOT / "templates" / "th.docx")
     block(d, th, "TH Sarabun New", 18, 16, 14, False)
     d.add_page_break()
-    block(d, en, "Arial", 12, 11, 11, True)
+    block(d, en, "Arial", 11, 11, 11, True)
     d.save(OUT / f"Abstract_{A['file_name']}.docx")
     print("EN body words:", words(en))
