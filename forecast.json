@@ -1,0 +1,29 @@
+{
+ "c3g_to_extract_mg_per_mL": {
+  "pancreatic_alpha_amylase": [
+   39.4,
+   67.4
+  ],
+  "intestinal_sucrase": [
+   127.5,
+   218.0
+  ],
+  "intestinal_maltase_at_least": [
+   394.2,
+   674.1
+  ]
+ },
+ "literature_extract_band_ug_per_mL": [
+  12.81,
+  48.5
+ ],
+ "ratio_scenario2_over_scenario1": 813,
+ "assumptions": {
+  "anthocyanin_mg_per_g_extract": [
+   2.0,
+   3.42
+  ],
+  "C3G_mg_per_g_dry_Riceberry_bran": 0.357,
+  "MW_C3G": 449.4
+ }
+}
