@@ -38,6 +38,13 @@ header h1{font-size:clamp(22px,2.9vw,33px);line-height:1.25}
 .key{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:13px 15px;font-size:14.6px;line-height:1.65}
 .kn{display:block;font-family:var(--display);font-weight:800;color:var(--berry);font-size:13px;letter-spacing:.06em;text-transform:uppercase;margin-bottom:4px}
 .steer{font-size:20px;margin:24px 0 -4px}
+.gallery{margin-top:10px}
+.figs{display:grid;grid-template-columns:repeat(auto-fit,minmax(330px,1fr));gap:14px;margin-top:12px}
+figure{margin:0;align-self:start;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:12px}
+figure.wide{grid-column:1/-1}
+figure img{width:100%;height:auto;border-radius:9px;background:#fff;display:block}
+figcaption{margin-top:8px;font-size:13.4px;color:var(--muted);line-height:1.6}
+figcaption b{color:var(--ink)}
 .story{margin-top:18px}
 .story p{margin:0 0 9px;line-height:1.7;font-size:15px}
 .uses{margin:0;padding-left:20px;line-height:1.7;font-size:15px}
@@ -78,6 +85,17 @@ button:focus-visible,.row:focus-visible{outline:3px solid var(--sun);outline-off
 .row[aria-selected="true"]{border-color:var(--berry);background:var(--berry-soft)}
 .rank{font-family:var(--mono);font-size:12px;color:var(--muted)}
 .lname{font-weight:600;font-size:14px;overflow-wrap:anywhere}
+.cls{display:inline-block;margin-left:7px;padding:1px 8px;border-radius:999px;font-size:11px;font-weight:600;vertical-align:1px}
+.c-antho{background:var(--berry-soft);color:var(--berry)}
+.c-oryz{background:#fff2d6;color:#9a6b00}
+.c-vite{background:var(--leaf-soft);color:#13794a}
+.c-flav{background:#ffe9d6;color:#b55a13}
+.c-phen{background:#e7edff;color:#2b4cab}
+.c-ctrl{background:#ffe0ea;color:#c2185b}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .c-oryz{background:#3a2d12;color:#ffc552}
+:root:not([data-theme="light"]) .c-flav{background:#3b2512;color:#ffa366}
+:root:not([data-theme="light"]) .c-phen{background:#1e2748;color:#9fb4ff}
+:root:not([data-theme="light"]) .c-ctrl{background:#3d1726;color:#ff86aa}}
 .bar{height:7px;border-radius:999px;background:var(--line);margin-top:4px;overflow:hidden}
 .bar span{display:block;height:100%;border-radius:999px;background:var(--berry);transition:width .6s cubic-bezier(.3,1.4,.5,1)}
 .row.ctrl .bar span{background:var(--pink)}
@@ -173,6 +191,23 @@ td.ok{color:var(--leaf);font-weight:600} td.no{color:var(--pink);font-weight:600
     </div>
   </section>
 
+  <section class="gallery">
+    <h2 class="steer">รูปผลการศึกษา</h2>
+    <div class="figs">
+      <figure><a href="selectivity.png" target="_blank"><img src="selectivity.png" alt="แผนที่การเลือกจับ"></a>
+        <figcaption><b>รูปที่ 1</b> ตำแหน่งของสารแต่ละตัวเทียบกับอะคาร์โบสบนเอนไซม์ทั้งสอง วงกลมคือสารที่ละลายน้ำ สี่เหลี่ยมคือสารที่ไม่ละลาย
+        พื้นที่แรเงาคือโซนที่ส่วนผสมอาหารควรอยู่</figcaption></figure>
+      <figure><a href="fingerprint.png" target="_blank"><img src="fingerprint.png" alt="กรดอะมิโนที่สัมผัส"></a>
+        <figcaption><b>รูปที่ 2</b> กรดอะมิโนที่แต่ละสารเข้าไปสัมผัส สีเข้มคือพันธะไฮโดรเจน สีอ่อนคือสัมผัสในระยะ 4 อังสตรอม
+        ชื่อสีชมพูคือกรดอะมิโนเร่งปฏิกิริยา</figcaption></figure>
+      <figure><a href="efficiency_size.png" target="_blank"><img src="efficiency_size.png" alt="ประสิทธิภาพต่ออะตอมและอิทธิพลของขนาดโมเลกุล"></a>
+        <figcaption><b>รูปที่ 3</b> ซ้าย ค่าการจับต่ออะตอม ขวา ความสัมพันธ์ระหว่างคะแนน docking กับขนาดโมเลกุล
+        ซึ่งเป็นเหตุผลที่ต้องดูการละลายและประสิทธิภาพต่ออะตอมควบคู่กัน</figcaption></figure>
+      <figure class="wide"><a href="forecast.png" target="_blank"><img src="forecast.png" alt="ผลที่คาดการณ์จากงานวิจัยทั่วโลก"></a>
+        <figcaption><b>รูปที่ 4</b> ค่าที่งานวิจัยทั่วโลกวัดไว้แล้ว และเส้นคาดการณ์ว่าการทดสอบเอนไซม์จริงของโครงงานนี้ควรออกมาแบบใด</figcaption></figure>
+    </div>
+  </section>
+
   <section class="grid2">
     <div class="panel">
       <h2>วิธีการ</h2>
@@ -245,6 +280,14 @@ td.ok{color:var(--leaf);font-weight:600} td.no{color:var(--pink);font-weight:600
 <script>
 const DATA = /*DATA*/null;
 const TH = {"acarbose":"Acarbose (ยาควบคุม)","cyanidin-3-O-glucoside":"Cyanidin-3-O-glucoside","peonidin-3-O-glucoside":"Peonidin-3-O-glucoside","protocatechuic acid":"Protocatechuic acid","ferulic acid":"Ferulic acid","p-coumaric acid":"p-Coumaric acid","vanillic acid":"Vanillic acid","cycloartenyl ferulate":"Cycloartenyl ferulate (γ-oryzanol)","24-methylenecycloartanyl ferulate":"24-Methylenecycloartanyl ferulate (γ-oryzanol)","gamma-tocotrienol":"γ-Tocotrienol","alpha-tocopherol":"α-Tocopherol","quercetin":"Quercetin"};
+const GROUP = {
+  "cyanidin-3-O-glucoside":["แอนโทไซยานิน","antho"],"peonidin-3-O-glucoside":["แอนโทไซยานิน","antho"],
+  "cycloartenyl ferulate":["แกมมา-โอริซานอล","oryz"],"24-methylenecycloartanyl ferulate":["แกมมา-โอริซานอล","oryz"],
+  "gamma-tocotrienol":["วิตามินอี","vite"],"alpha-tocopherol":["วิตามินอี","vite"],
+  "quercetin":["ฟลาโวนอยด์","flav"],
+  "protocatechuic acid":["กรดฟีนอลิก","phen"],"ferulic acid":["กรดฟีนอลิก","phen"],
+  "p-coumaric acid":["กรดฟีนอลิก","phen"],"vanillic acid":["กรดฟีนอลิก","phen"],
+  "acarbose":["ยาอ้างอิง","ctrl"]};
 const css = n => getComputedStyle(document.documentElement).getPropertyValue(n).trim();
 let tgt = "MGAM", lig = null, surf = false, xtal = false, spin = true, viewer = null;
 
@@ -263,7 +306,7 @@ function renderList(){
     const s=x[tgt], ctrl=x.ligand==="acarbose", beat=!ctrl && selective(x);
     return `<div class="row${ctrl?" ctrl":""}" role="option" tabindex="0" data-l="${x.ligand}" aria-selected="${x.ligand===lig}">
       <span class="rank">${i+1}</span>
-      <div><div class="lname">${TH[x.ligand]}${ctrl?'<span class="tag">CONTROL</span>':""}${beat?'<span class="tag win">เข้าเกณฑ์</span>':""}</div>
+      <div><div class="lname">${TH[x.ligand]}<span class="cls c-${GROUP[x.ligand][1]}">${GROUP[x.ligand][0]}</span>${beat?'<span class="tag win">เข้าเกณฑ์</span>':""}</div>
       <div class="bar"><span style="width:${(s.mean/min*100).toFixed(1)}%"></span></div></div>
       <div class="score">${s.mean.toFixed(2)}<small>± ${s.sd.toFixed(2)}</small></div></div>`;
   }).join("");
