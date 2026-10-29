@@ -1,4 +1,4 @@
-<title>Riceberry Selectivity Map</title>
+<title>Riceberry Bran Docking</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=IBM+Plex+Sans+Thai:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap">
 <style>
@@ -28,6 +28,23 @@ h2{font-size:20px;font-weight:700}
 .eyebrow{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:600}
 .lede{color:var(--muted);max-width:68ch;margin:8px 0 0}
 header{display:grid;gap:6px}
+header h1{font-size:clamp(22px,2.9vw,33px);line-height:1.25}
+.idbar{display:flex;align-items:center;gap:12px;margin-bottom:2px}
+.logo{width:46px;height:46px;flex:0 0 auto;color:var(--berry)}
+.entitle{margin:2px 0 0;font-size:14px;color:var(--muted);font-style:italic}
+.byline{margin:6px 0 0;font-size:14.5px;color:var(--ink)}
+.byline b{color:var(--berry)}
+.story{margin-top:18px}
+.story p{margin:0 0 9px;line-height:1.7;font-size:15px}
+.uses{margin:0;padding-left:20px;line-height:1.7;font-size:15px}
+.uses li{margin-bottom:7px}
+.refs{margin-top:26px}
+.refs h2{font-size:20px;margin-bottom:8px}
+.refs ol{margin:0;padding-left:20px;color:var(--muted);font-size:13.6px;line-height:1.6}
+.refs li{margin-bottom:5px}
+.refs a{color:var(--berry)}
+.downloads{margin:22px 0 10px;padding:14px 16px;border:1px solid var(--line);border-radius:14px;background:var(--card);font-size:14.5px}
+.downloads a{color:var(--berry)}
 .grain{display:inline-block;width:14px;height:22px;border-radius:50%;background:var(--berry);transform:rotate(25deg);margin-right:8px;vertical-align:-3px;animation:bob 3s ease-in-out infinite}
 @keyframes bob{50%{transform:rotate(-10deg) translateY(-3px)}}
 .bench{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:18px}
@@ -81,8 +98,21 @@ td.ok{color:var(--leaf);font-weight:600} td.no{color:var(--pink);font-weight:600
 
 <div class="wrap">
   <header>
-    <div class="eyebrow"><span class="grain"></span>INMU 50th · Food Sciences &amp; Food Chemistry · in silico</div>
-    <h1>สารไหนใน<em>รำข้าวไรซ์เบอร์รี่</em> จับถูกเอนไซม์</h1>
+    <div class="idbar">
+      <svg class="logo" viewBox="0 0 64 64" role="img" aria-label="ตราโครงงาน">
+        <circle cx="32" cy="32" r="30" fill="none" stroke="currentColor" stroke-width="2.5" opacity=".35"/>
+        <ellipse cx="32" cy="27" rx="9" ry="16" transform="rotate(-18 32 27)" fill="currentColor" opacity=".85"/>
+        <path d="M32 11c-6 7-6 25 0 32" fill="none" stroke="#fff" stroke-width="2" opacity=".65"/>
+        <path d="M18 45c7 7 21 7 28 0" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+        <circle cx="18" cy="45" r="3.4" fill="currentColor"/><circle cx="46" cy="45" r="3.4" fill="currentColor"/>
+      </svg>
+      <div class="eyebrow"><span class="grain"></span>การประชุมวิชาการครบรอบ 50 ปี สถาบันโภชนาการ มหาวิทยาลัยมหิดล · 11–12 กุมภาพันธ์ 2570<br>
+      หัวข้อที่ 1 วิทยาศาสตร์อาหารและเคมีอาหาร · การนำเสนอแบบโปสเตอร์</div>
+    </div>
+    <h1>การจัดลำดับความสำคัญของสารใน<em>รำข้าวไรซ์เบอร์รี่</em> ต่อเอนไซม์แอลฟา-กลูโคซิเดสและแอลฟา-อะไมเลสของมนุษย์ ด้วยการจำลองการจับโมเลกุล เพื่อเพิ่มมูลค่าผลพลอยได้จากการสีข้าว</h1>
+    <p class="entitle">Docking-based prioritisation of Riceberry bran constituents against human α-glucosidase and α-amylase for by-product valorisation</p>
+    <p class="byline">ผู้จัดทำ <b>นางสาวพุฒิธาดา พฤฒชยากุล</b> ชั้นมัธยมศึกษาปีที่ 5 · ครูที่ปรึกษา <b>นางสาวหทัยทิพย์ อินทรโชติ</b><br>
+    โรงเรียนบดินทรเดชา (สิงห์ สิงหเสนี) กรุงเทพมหานคร</p>
     <p class="lede">ยา acarbose ยับยั้ง α-amylase แรงเกินไป แป้งที่ไม่ถูกย่อยจึงไปหมักในลำไส้ใหญ่จนท้องอืด ส่วนผสมอาหารที่ดีจึงควรจับ <b>α-glucosidase แน่น แต่ปล่อย α-amylase ไว้</b> หน้านี้คือผล docking สาร 11 ชนิดจากรำข้าวสีม่วงบนเอนไซม์มนุษย์ทั้งสองตัว (MGAM จาก PDB 2QMJ และ HPA จาก PDB 3BAJ) สารที่ติดป้ายสีเขียวคือสารที่เข้าเกณฑ์นี้ กดชื่อสารเพื่อหมุนดูว่าเกาะกรดอะมิโนตัวไหน</p>
   </header>
 
@@ -132,6 +162,67 @@ td.ok{color:var(--leaf);font-weight:600} td.no{color:var(--pink);font-weight:600
   <section class="panel">
     <h2>ความเหมือนยา (Lipinski / Veber)</h2>
     <div class="tablebox"><table id="dl"></table></div>
+  </section>
+
+  <section class="panel story">
+    <h2>ที่มาและความสำคัญ</h2>
+    <p>ทุกครั้งที่สีข้าว ชั้นรำจะถูกขัดออกเป็นผลพลอยได้ที่ขายได้ราคาต่ำ ส่วนใหญ่จบที่อาหารสัตว์ เพราะไขมันในรำ (ราว 18–21%)
+    ถูกเอนไซม์ไลเปสในตัวมันเองย่อยจนเหม็นหืนอย่างรวดเร็วหลังสี แต่รำของข้าวสีอย่าง<b>ไรซ์เบอร์รี่</b>
+    กลับเป็นส่วนที่เก็บสารสำคัญไว้มากที่สุด ทั้งแอนโทไซยานิน แกมมา-โอริซานอล วิตามินอี และกรดฟีนอลิก</p>
+    <p>อีกด้านหนึ่ง ยา <b>acarbose</b> ที่ใช้ชะลอการย่อยแป้งในผู้ป่วยเบาหวานมีผลข้างเคียงทางเดินอาหารสูง
+    (ท้องอืด 74% ของผู้ป่วย 1,255 ราย เทียบกับ 29% ในกลุ่มยาหลอก ตามเอกสารกำกับยาของสหรัฐฯ) เพราะยับยั้งแอลฟา-อะไมเลสแรงเกินไป
+    จนแป้งที่ไม่ถูกย่อยไปหมักในลำไส้ใหญ่ งานวิจัยก่อนหน้านี้พบว่าแอนโทไซยานินจากข้าวสียับยั้งเอนไซม์ย่อยแป้งได้ในหลอดทดลอง
+    แต่<b>ยังไม่มีใครเทียบสารในรำไรซ์เบอร์รี่ด้วยกันเองบนเอนไซม์ของมนุษย์</b> ว่าควรสกัดตัวไหนไปทดสอบก่อน
+    ซึ่งเป็นคำถามที่ต้องตอบก่อนจะลงทุนทำแล็บจริง — โครงงานนี้ตอบคำถามนั้นด้วยการจำลองการจับโมเลกุล</p>
+  </section>
+
+  <section class="panel story">
+    <h2>ประโยชน์และการนำไปใช้</h2>
+    <ul class="uses">
+      <li><b>ชี้เป้าให้ห้องแล็บ</b> แทนที่จะทดสอบสารทั้ง 11 ชนิดแบบสุ่ม ผลการจัดลำดับบอกว่าให้เริ่มจาก<b>ส่วนสกัดน้ำที่เป็นกรด
+      ซึ่งมีแอนโทไซยานินสูง</b> ไม่ใช่รำทั้งก้อนหรือส่วนน้ำมัน ประหยัดทั้งเวลา สารเคมี และงบประมาณ</li>
+      <li><b>คัดสารที่ใช้ไม่ได้ออกตั้งแต่ต้น</b> เอสเทอร์ของแกมมา-โอริซานอลจับเอนไซม์ได้แน่นที่สุดก็จริง แต่ logP มากกว่า 10
+      จึงไม่ละลายในที่ที่เอนไซม์ทำงาน และอยู่ในส่วนน้ำมัน ไม่เหมาะกับเครื่องดื่ม</li>
+      <li><b>กำหนดการทดลองยืนยันที่ชัดเจน</b> ต้องวัดค่า IC₅₀ บนเอนไซม์ทั้งสองตัวคู่กัน แล้วรายงานดัชนีความจำเพาะ
+      (IC₅₀ อะไมเลส ÷ IC₅₀ กลูโคซิเดส) เพื่อให้วัดความแรงและความจำเพาะจริง ไม่ใช่อนุมานเอา</li>
+      <li><b>เพิ่มมูลค่าผลพลอยได้</b> เปลี่ยนรำข้าวที่ขายเป็นอาหารสัตว์ให้เป็นวัตถุดิบตั้งต้นของส่วนผสมอาหารที่มีข้อมูลรองรับ
+      เป็นประโยชน์กับโรงสีและเกษตรกรผู้ปลูกข้าวไรซ์เบอร์รี่</li>
+    </ul>
+  </section>
+
+  <section class="panel story">
+    <h2>ผลิตภัณฑ์ต้นแบบ</h2>
+    <p>ส่วนสกัดที่คัดได้ถูกออกแบบให้ไปต่อเป็น<b>เครื่องดื่มเจลลี่ไม่เติมน้ำตาล</b> ซึ่งเป็นรูปแบบที่เข้ากับธรรมชาติของแอนโทไซยานิน
+    คือทนกรดและความร้อนสั้น ๆ แต่ไม่ทนการอบนาน</p>
+    <ul class="uses">
+      <li><b>กระบวนการ</b> ปรับ pH 3.2–3.5 ให้สีและสารคงตัว ฆ่าเชื้อที่ 80 °C นาน 1 นาที แล้วบรรจุขณะร้อน</li>
+      <li><b>สูตรทดลอง</b> ใส่สารสกัด 3 ระดับ คือ 20 / 30 / 40% เพื่อหาจุดที่รสชาติยังดีและสารยังพอ</li>
+      <li><b>การทดสอบผู้บริโภค</b> ชิมแบบ 9-point hedonic ผู้ทดสอบอย่างน้อย 30 คน</li>
+      <li><b>การกล่าวอ้าง</b> ฉลากระบุเฉพาะข้อเท็จจริง ไม่กล่าวอ้างสรรพคุณทางสุขภาพ เพราะยังไม่มีผลการทดสอบในคนและยังไม่ได้รับอนุญาตจาก อย.</li>
+    </ul>
+  </section>
+
+  <section class="downloads">
+    <b>เอกสารประกอบโครงงาน</b> ·
+    <a href="Poster_Puttitada_Pruetchayakul.pdf">โปสเตอร์ (PDF)</a> ·
+    <a href="Supplementary_Figures_and_Data.pdf">ข้อมูลและรูปเพิ่มเติม (PDF)</a> ·
+    <a href="Forecast_from_literature.pdf">ผลที่คาดการณ์จากงานวิจัยทั่วโลก (PDF)</a> ·
+    <a href="https://github.com/TANACHAT007/riceberry-bran-docking">สคริปต์และผลดิบทั้งหมดบน GitHub</a>
+    <div style="margin-top:8px;color:var(--muted);font-size:13.5px">ค่าที่แสดงบนหน้านี้คำนวณด้วยเครื่องของผู้จัดทำเอง รันซ้ำได้จากสคริปต์ในลิงก์ GitHub · docking บอกการจับที่ทำนายได้ ไม่ใช่ความแรงในการยับยั้ง และไม่มีการกล่าวอ้างสรรพคุณทางสุขภาพ</div>
+  </section>
+
+  <section class="refs">
+    <h2>อ้างอิง</h2>
+    <ol>
+      <li>Sim L, Quezada-Calvillo R, Sterchi EE, Nichols BL, Rose DR. Human intestinal maltase-glucoamylase: crystal structure of the N-terminal catalytic subunit with acarbose. <i>J Mol Biol.</i> 2008;375:782. โครงสร้าง <a href="https://www.rcsb.org/structure/2QMJ">PDB 2QMJ</a></li>
+      <li>Maurus R, Begum A, Williams LK, Fredriksen JR, Zhang R, Withers SG. Alternative catalytic anions differentially modulate human α-amylase activity and specificity. <i>Biochemistry.</i> 2008;47:3332. โครงสร้าง <a href="https://www.rcsb.org/structure/3BAJ">PDB 3BAJ</a></li>
+      <li>Eberhardt J, Santos-Martins D, Tillack AF, Forli S. AutoDock Vina 1.2.0. <i>J Chem Inf Model.</i> 2021;61:3891 · Trott O, Olson AJ. <i>J Comput Chem.</i> 2010;31:455</li>
+      <li>Meeko (Forli Lab, Scripps Research) · RDKit · PDBFixer/OpenMM: Eastman P, et al. <i>PLoS Comput Biol.</i> 2017;13:e1005659 · โครงสร้างสารจาก PubChem: Kim S, et al. <i>Nucleic Acids Res.</i> 2023;51:D1373</li>
+      <li>Akkarachiyasit S, Charoenlertkul P, Yibchok-anun S, Adisakwattana S. Inhibitory activities of cyanidin and its glycosides and synergistic effect with acarbose against intestinal α-glucosidase and pancreatic α-amylase. <i>Int J Mol Sci.</i> 2010;11:3387. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC2956102/">อ่านฉบับเต็ม</a></li>
+      <li>Settu R, Selvaraj D, Padikasan IA. GCMS profiling and in silico screening of alpha-amylase inhibitors in traditional pigmented rice varieties of Tamil Nadu. <i>Food Bioscience.</i> 2021;42:101154</li>
+      <li>ข้อมูลผลข้างเคียงของ acarbose: เอกสารกำกับยาของสหรัฐอเมริกา (flatulence 74% ของผู้ป่วย 1,255 ราย เทียบกับ 29% ของกลุ่มยาหลอก 999 ราย)</li>
+      <li>ข้าวไรซ์เบอร์รี่เป็นลูกผสมระหว่างข้าวเจ้าหอมนิลกับข้าวขาวดอกมะลิ 105 — ศูนย์วิทยาศาสตร์ข้าว มหาวิทยาลัยเกษตรศาสตร์</li>
+    </ol>
   </section>
 </div>
 
@@ -220,15 +311,3 @@ statics(); setTarget("MGAM");
 matchMedia("(prefers-color-scheme: dark)").addEventListener("change",()=>draw());
 new MutationObserver(()=>draw()).observe(document.documentElement,{attributes:true,attributeFilter:["data-theme"]});
 </script>
-
-<footer style="max-width:1100px;margin:0 auto;padding:28px 20px 56px;font:15px/1.6 'IBM Plex Sans Thai',system-ui,sans-serif;color:#5b6273">
-  <hr style="border:0;border-top:1px solid rgba(128,128,128,.25);margin:0 0 20px">
-  <p style="margin:0 0 10px"><strong style="color:inherit">Everything behind this screen</strong> — all numbers come from docking runs on a single laptop and can be reproduced from the scripts in the repository.</p>
-  <p style="margin:0 0 6px">
-    <a href="Supplementary_Figures_and_Data.pdf" style="color:#7a3fd1">Supplementary figures and full data (PDF)</a> ·
-    <a href="Poster_Puttitada_Pruetchayakul.pdf" style="color:#7a3fd1">Conference poster (PDF)</a> ·
-    <a href="Forecast_from_literature.pdf" style="color:#7a3fd1">What the bench assay should give, projected from the literature (PDF)</a> ·
-    <a href="https://github.com/TANACHAT007/riceberry-bran-docking" style="color:#7a3fd1">Scripts and raw results on GitHub</a>
-  </p>
-  <p style="margin:14px 0 0;font-size:13.5px">Docking ranks predicted binding, not inhibitory potency or selectivity. No health claim is made.</p>
-</footer>
