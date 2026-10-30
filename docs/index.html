@@ -45,11 +45,13 @@ header h1{max-width:none}
 .kn{display:block;font-family:var(--display);font-weight:800;color:var(--berry);font-size:13px;letter-spacing:.06em;text-transform:uppercase;margin-bottom:4px}
 .steer{font-size:20px;margin:24px 0 -4px}
 .gallery{margin-top:10px}
-.figs{display:grid;grid-template-columns:repeat(auto-fit,minmax(330px,1fr));gap:14px;margin-top:12px}
-figure{margin:0;align-self:start;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:12px}
+.figs{display:grid;grid-template-columns:repeat(auto-fit,minmax(430px,1fr));gap:14px;margin-top:12px;align-items:stretch}
+figure{margin:0;display:flex;flex-direction:column;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:12px}
 figure.wide{grid-column:1/-1}
-figure img{width:100%;height:auto;border-radius:9px;background:#fff;display:block}
-figcaption{margin-top:8px;font-size:13.4px;color:var(--muted);line-height:1.6}
+figure img{width:100%;height:300px;object-fit:contain;border-radius:9px;background:#fff;display:block;padding:6px}
+figure.wide img{height:360px}
+figure a{display:block}
+figcaption{margin-top:auto;padding-top:8px;font-size:13.4px;color:var(--muted);line-height:1.6}
 figcaption b{color:var(--ink)}
 .story{margin-top:18px}
 .illus{border:0;padding:0;background:none;margin:4px 0 14px}
@@ -224,7 +226,7 @@ td.ok{color:var(--leaf);font-weight:600} td.no{color:var(--pink);font-weight:600
       <figure><a href="fingerprint.png" target="_blank"><img src="fingerprint.png" alt="กรดอะมิโนที่สัมผัส"></a>
         <figcaption data-en='<b>Fig. 2</b> Which active-site residues each pose touches: dark = hydrogen bond, pale = contact within 4 Å, catalytic residues labelled in pink.'><b>รูปที่ 2</b> กรดอะมิโนที่แต่ละสารเข้าไปสัมผัส สีเข้มคือพันธะไฮโดรเจน สีอ่อนคือสัมผัสในระยะ 4 อังสตรอม
         ชื่อสีชมพูคือกรดอะมิโนเร่งปฏิกิริยา</figcaption></figure>
-      <figure><a href="efficiency_size.png" target="_blank"><img src="efficiency_size.png" alt="ประสิทธิภาพต่ออะตอมและอิทธิพลของขนาดโมเลกุล"></a>
+      <figure class="wide"><a href="efficiency_size.png" target="_blank"><img src="efficiency_size.png" alt="ประสิทธิภาพต่ออะตอมและอิทธิพลของขนาดโมเลกุล"></a>
         <figcaption data-en='<b>Fig. 3</b> Left, binding per heavy atom. Right, how the docking score rises with molecular size — the reason solubility and efficiency were scored alongside the raw value.'><b>รูปที่ 3</b> ซ้าย ค่าการจับต่ออะตอม ขวา ความสัมพันธ์ระหว่างคะแนน docking กับขนาดโมเลกุล
         ซึ่งเป็นเหตุผลที่ต้องดูการละลายและประสิทธิภาพต่ออะตอมควบคู่กัน</figcaption></figure>
       <figure class="wide"><a href="forecast.png" target="_blank"><img src="forecast.png" alt="ผลที่คาดการณ์จากงานวิจัยทั่วโลก"></a>
