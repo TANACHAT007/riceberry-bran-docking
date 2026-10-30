@@ -59,7 +59,8 @@ figcaption b{color:var(--ink)}
 .illus.side img{max-height:none}
 .illus figcaption{margin-top:7px;font-size:13px;color:var(--muted);line-height:1.6}
 .aitag{display:inline-block;background:var(--berry-soft);color:var(--berry);border-radius:999px;padding:1px 9px;font-size:11.5px;font-weight:600}
-.prod{display:grid;grid-template-columns:260px 1fr;gap:18px;align-items:start}
+.prod{display:grid;grid-template-columns:280px minmax(0,1fr);gap:20px;align-items:start}
+.prodtext{min-width:0}
 .prod h2{grid-column:1/-1}
 .prod .illus{margin:0}
 @media (max-width:720px){.prod{grid-template-columns:1fr}}
@@ -277,6 +278,7 @@ td.ok{color:var(--leaf);font-weight:600} td.no{color:var(--pink);font-weight:600
     <figure class="illus side"><img src="ai_jelly_drink.jpg" alt="ต้นแบบเครื่องดื่มเจลลี่">
       <figcaption data-en='The intended format: a clear 200 ml bottle. The label is blank because no claim is supported by test data yet · <span class="aitag">AI-generated illustration, not a photograph of a real product</span>'>หน้าตาที่ตั้งใจให้เป็น ขวดใส 200 มิลลิลิตร ฉลากยังว่างเพราะยังไม่มีข้อมูลทดสอบมารองรับข้อความใด ·
       <span class="aitag">ภาพประกอบสร้างด้วย AI ไม่ใช่ภาพถ่ายผลิตภัณฑ์จริง</span></figcaption></figure>
+    <div class="prodtext">
     <p data-en='The selected fraction is meant to go into a <b>no-added-sugar jelly drink</b>, a format that suits anthocyanins: they survive acid and a short heat step, but not long baking.'>ส่วนสกัดที่คัดได้ถูกออกแบบให้ไปต่อเป็น<b>เครื่องดื่มเจลลี่ไม่เติมน้ำตาล</b> ซึ่งเป็นรูปแบบที่เข้ากับธรรมชาติของแอนโทไซยานิน
     คือทนกรดและความร้อนสั้น ๆ แต่ไม่ทนการอบนาน</p>
     <ul class="uses">
@@ -285,6 +287,8 @@ td.ok{color:var(--leaf);font-weight:600} td.no{color:var(--pink);font-weight:600
       <li data-en='<b>Consumer testing.</b> A 9-point hedonic test with at least 30 panellists.'><b>การทดสอบผู้บริโภค</b> ชิมแบบ 9-point hedonic ผู้ทดสอบอย่างน้อย 30 คน</li>
       <li data-en='<b>Claims.</b> The label states facts only. No health claim is made, because there is no human data and no approval from the Thai FDA.'><b>การกล่าวอ้าง</b> ฉลากระบุเฉพาะข้อเท็จจริง ไม่กล่าวอ้างสรรพคุณทางสุขภาพ เพราะยังไม่มีผลการทดสอบในคนและยังไม่ได้รับอนุญาตจาก อย.</li>
     </ul>
+    </div>
+
   </section>
 
   <section class="downloads">
