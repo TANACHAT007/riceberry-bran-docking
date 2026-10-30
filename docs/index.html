@@ -30,7 +30,7 @@ h2{font-size:20px;font-weight:700}
 header{display:grid;gap:6px}
 header h1{font-size:clamp(24px,3.1vw,38px);line-height:1.2;max-width:19ch}
 header h1{max-width:none}
-.topbar{display:flex;justify-content:flex-end;margin-bottom:-6px}
+.topbar{display:flex;justify-content:flex-end;gap:8px;margin-bottom:-6px}
 .globe{display:inline-flex;align-items:center;gap:6px;background:var(--card);border:1px solid var(--line);color:var(--berry);
   border-radius:999px;padding:6px 13px;font:600 13px/1 var(--body);cursor:pointer}
 .globe:hover{border-color:var(--berry)}
@@ -138,6 +138,10 @@ td.ok{color:var(--leaf);font-weight:600} td.no{color:var(--pink);font-weight:600
 
 <div class="wrap">
   <div class="topbar">
+    <button id="theme" class="globe" aria-label="Switch theme / สลับธีมสี" title="ธีมสว่าง / ธีมมืด">
+      <svg id="theme-icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"></svg>
+      <span id="theme-label">สว่าง</span>
+    </button>
     <button id="lang" class="globe" aria-label="Switch language / เปลี่ยนภาษา" title="ไทย / English">
       <svg viewBox="0 0 24 24" width="19" height="19" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M3 12h18M12 3c2.6 2.6 2.6 15.4 0 18M12 3c-2.6 2.6-2.6 15.4 0 18" fill="none" stroke="currentColor" stroke-width="1.8"/></svg>
       <span id="lang-label">EN</span>
@@ -424,13 +428,30 @@ function applyLang(){
   });
   document.getElementById("lang-label").textContent = (lang === "en") ? "ไทย" : "EN";
   statics(); renderList(); setTarget(tgt);
+  if (typeof applyTheme === "function") applyTheme();
 }
+const SUN = '<circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M12 2.5v2.4M12 19.1v2.4M4.2 4.2l1.7 1.7M18.1 18.1l1.7 1.7M2.5 12h2.4M19.1 12h2.4M4.2 19.8l1.7-1.7M18.1 5.9l1.7-1.7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>';
+const MOON = '<path d="M20 14.5A8.2 8.2 0 1 1 9.5 4a6.6 6.6 0 0 0 10.5 10.5z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>';
+function systemDark(){ return matchMedia("(prefers-color-scheme: dark)").matches; }
+let theme = localStorage.getItem("rb-theme") || (systemDark() ? "dark" : "light");
+function applyTheme(){
+  document.documentElement.setAttribute("data-theme", theme);
+  document.getElementById("theme-icon").innerHTML = (theme === "dark") ? SUN : MOON;
+  document.getElementById("theme-label").textContent =
+    (theme === "dark") ? (lang === "en" ? "Light" : "สว่าง") : (lang === "en" ? "Dark" : "มืด");
+  draw();
+}
+document.getElementById("theme").onclick = () => {
+  theme = (theme === "dark") ? "light" : "dark";
+  try { localStorage.setItem("rb-theme", theme); } catch(e) {}
+  applyTheme();
+};
 document.getElementById("lang").onclick = () => {
   lang = (lang === "en") ? "th" : "en";
   try { localStorage.setItem("rb-lang", lang); } catch(e) {}
   applyLang();
 };
-statics(); setTarget("MGAM"); applyLang();
+statics(); setTarget("MGAM"); applyLang(); applyTheme();
 matchMedia("(prefers-color-scheme: dark)").addEventListener("change",()=>draw());
 new MutationObserver(()=>draw()).observe(document.documentElement,{attributes:true,attributeFilter:["data-theme"]});
 </script>
