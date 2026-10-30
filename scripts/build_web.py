@@ -31,7 +31,15 @@ methods = [
     ["Docking", "AutoDock Vina 1.2, กล่องครอบตำแหน่ง acarbose ในผลึก (≥ 22 Å), exhaustiveness 16, 3 seed"],
     ["วิเคราะห์", "ค่าเฉลี่ย ± SD, ligand efficiency, กรดอะมิโนในระยะ 4 Å, Lipinski/Veber"],
 ]
-data = {"rows": S["rows"], "validation": S["validation"], "web": web, "methods": methods}
+methods_en = [
+    ["Targets", "Human ntMGAM (PDB 2QMJ, 1.9 Å) and human pancreatic α-amylase (PDB 3BAJ, 2.1 Å), both crystallised with acarbose"],
+    ["Protein prep", "PDBFixer: waters, ions and ligands removed, missing atoms and hydrogens added at pH 7.4 → Meeko PDBQT"],
+    ["Ligand prep", "Structures from PubChem → RDKit ETKDG + MMFF94 → Meeko"],
+    ["Docking", "AutoDock Vina 1.2, box over the crystal acarbose site (≥ 22 Å), exhaustiveness 16, 3 seeds"],
+    ["Analysis", "Mean ± SD, ligand efficiency, residues within 4 Å, Lipinski/Veber"],
+]
+data = {"rows": S["rows"], "validation": S["validation"], "web": web,
+        "methods": methods, "methods_en": methods_en}
 html = (ROOT / "web" / "template.html").read_text().replace("/*DATA*/null", json.dumps(data, separators=(",", ":")))
 (ROOT / "web" / "riceberry-docking.html").write_text(html)
 print("web size KB", len(html) // 1024)

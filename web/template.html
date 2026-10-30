@@ -28,10 +28,16 @@ h2{font-size:20px;font-weight:700}
 .eyebrow{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:600}
 .lede{color:var(--muted);max-width:68ch;margin:8px 0 0}
 header{display:grid;gap:6px}
-header h1{font-size:clamp(22px,2.9vw,33px);line-height:1.25}
+header h1{font-size:clamp(24px,3.1vw,38px);line-height:1.2;max-width:19ch}
+header h1{max-width:none}
+.topbar{display:flex;justify-content:flex-end;margin-bottom:-6px}
+.globe{display:inline-flex;align-items:center;gap:6px;background:var(--card);border:1px solid var(--line);color:var(--berry);
+  border-radius:999px;padding:6px 13px;font:600 13px/1 var(--body);cursor:pointer}
+.globe:hover{border-color:var(--berry)}
+.fulltitle{margin:8px 0 0;font-size:13.6px;color:var(--muted);line-height:1.55;max-width:80ch}
 .idbar{display:flex;align-items:center;gap:12px;margin-bottom:2px}
 .logo{width:46px;height:46px;flex:0 0 auto;color:var(--berry)}
-.entitle{margin:2px 0 0;font-size:14px;color:var(--muted);font-style:italic}
+
 .byline{margin:6px 0 0;font-size:14.5px;color:var(--ink)}
 .byline b{color:var(--berry)}
 .keys{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;margin:18px 0 4px}
@@ -46,6 +52,15 @@ figure img{width:100%;height:auto;border-radius:9px;background:#fff;display:bloc
 figcaption{margin-top:8px;font-size:13.4px;color:var(--muted);line-height:1.6}
 figcaption b{color:var(--ink)}
 .story{margin-top:18px}
+.illus{border:0;padding:0;background:none;margin:4px 0 14px}
+.illus img{width:100%;height:auto;max-height:330px;object-fit:cover;border-radius:12px;display:block}
+.illus.side img{max-height:none}
+.illus figcaption{margin-top:7px;font-size:13px;color:var(--muted);line-height:1.6}
+.aitag{display:inline-block;background:var(--berry-soft);color:var(--berry);border-radius:999px;padding:1px 9px;font-size:11.5px;font-weight:600}
+.prod{display:grid;grid-template-columns:260px 1fr;gap:18px;align-items:start}
+.prod h2{grid-column:1/-1}
+.prod .illus{margin:0}
+@media (max-width:720px){.prod{grid-template-columns:1fr}}
 .story p{margin:0 0 9px;line-height:1.7;font-size:15px}
 .uses{margin:0;padding-left:20px;line-height:1.7;font-size:15px}
 .uses li{margin-bottom:7px}
@@ -119,6 +134,13 @@ td.ok{color:var(--leaf);font-weight:600} td.no{color:var(--pink);font-weight:600
 </style>
 
 <div class="wrap">
+  <div class="topbar">
+    <button id="lang" class="globe" aria-label="Switch language / เปลี่ยนภาษา" title="ไทย / English">
+      <svg viewBox="0 0 24 24" width="19" height="19" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M3 12h18M12 3c2.6 2.6 2.6 15.4 0 18M12 3c-2.6 2.6-2.6 15.4 0 18" fill="none" stroke="currentColor" stroke-width="1.8"/></svg>
+      <span id="lang-label">EN</span>
+    </button>
+  </div>
+
   <header>
     <div class="idbar">
       <svg class="logo" viewBox="0 0 64 64" role="img" aria-label="ตราโครงงาน">
@@ -128,38 +150,40 @@ td.ok{color:var(--leaf);font-weight:600} td.no{color:var(--pink);font-weight:600
         <path d="M18 45c7 7 21 7 28 0" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
         <circle cx="18" cy="45" r="3.4" fill="currentColor"/><circle cx="46" cy="45" r="3.4" fill="currentColor"/>
       </svg>
-      <div class="eyebrow"><span class="grain"></span>การประชุมวิชาการครบรอบ 50 ปี สถาบันโภชนาการ มหาวิทยาลัยมหิดล · 11–12 กุมภาพันธ์ 2570<br>
+      <div class="eyebrow" data-en='<span class="grain"></span>50th Anniversary Scientific Conference, Institute of Nutrition, Mahidol University · 11–12 February 2027<br>Theme 1 Food Science and Food Chemistry · Poster presentation'><span class="grain"></span>การประชุมวิชาการครบรอบ 50 ปี สถาบันโภชนาการ มหาวิทยาลัยมหิดล · 11–12 กุมภาพันธ์ 2570<br>
       หัวข้อที่ 1 วิทยาศาสตร์อาหารและเคมีอาหาร · การนำเสนอแบบโปสเตอร์</div>
     </div>
-    <h1>การจัดลำดับความสำคัญของสารใน<em>รำข้าวไรซ์เบอร์รี่</em> ต่อเอนไซม์แอลฟา-กลูโคซิเดสและแอลฟา-อะไมเลสของมนุษย์ ด้วยการจำลองการจับโมเลกุล เพื่อเพิ่มมูลค่าผลพลอยได้จากการสีข้าว</h1>
-    <p class="entitle">Docking-based prioritisation of Riceberry bran constituents against human α-glucosidase and α-amylase for by-product valorisation</p>
-    <p class="byline">ผู้จัดทำ <b>นางสาวพุฒิธาดา พฤฒชยากุล</b> ชั้นมัธยมศึกษาปีที่ 5 · ครูที่ปรึกษา <b>นางสาวหทัยทิพย์ อินทรโชติ</b><br>
+    <h1 data-en='Which compound in <em>Riceberry bran</em> binds the starch-digesting enzymes — and can still be used in food'>สารไหนใน<em>รำข้าวไรซ์เบอร์รี่</em> จับเอนไซม์ย่อยแป้งได้ และยังใช้ในอาหารได้จริง</h1>
+    <p class="fulltitle" data-en='Full title · Docking-based prioritisation of Riceberry bran constituents against human α-glucosidase and α-amylase for by-product valorisation'>ชื่อโครงงาน · การจัดลำดับความสำคัญของสารในรำข้าวไรซ์เบอร์รี่ต่อเอนไซม์แอลฟา-กลูโคซิเดสและแอลฟา-อะไมเลสของมนุษย์ ด้วยการจำลองการจับโมเลกุล เพื่อเพิ่มมูลค่าผลพลอยได้จากการสีข้าว</p>
+    <p class="byline" data-en='By <b>Puttitada Pruetchayakul</b>, Grade 11 · Advisor <b>Hathaithip Intharachot</b><br>Bodindecha (Sing Singhaseni) School, Bangkok, Thailand'>ผู้จัดทำ <b>นางสาวพุฒิธาดา พฤฒชยากุล</b> ชั้นมัธยมศึกษาปีที่ 5 · ครูที่ปรึกษา <b>นางสาวหทัยทิพย์ อินทรโชติ</b><br>
     โรงเรียนบดินทรเดชา (สิงห์ สิงหเสนี) กรุงเทพมหานคร</p>
-    <p class="lede">ยา acarbose ยับยั้ง α-amylase แรงเกินไป แป้งที่ไม่ถูกย่อยจึงไปหมักในลำไส้ใหญ่จนท้องอืด ส่วนผสมอาหารที่ดีจึงควรจับ <b>α-glucosidase แน่น แต่ปล่อย α-amylase ไว้</b> หน้านี้คือผล docking สาร 11 ชนิดจากรำข้าวสีม่วงบนเอนไซม์มนุษย์ทั้งสองตัว (MGAM จาก PDB 2QMJ และ HPA จาก PDB 3BAJ) สารที่ติดป้ายสีเขียวคือสารที่เข้าเกณฑ์นี้ กดชื่อสารเพื่อหมุนดูว่าเกาะกรดอะมิโนตัวไหน</p>
+    <p class="lede" data-en='Acarbose slows starch digestion but blocks α-amylase so hard that undigested starch ferments in the colon and causes bloating. A food ingredient should instead bind <b>α-glucosidase tightly and leave α-amylase alone</b>. This page shows the docking of 11 constituents of purple rice bran against both human enzymes (MGAM from PDB 2QMJ, HPA from PDB 3BAJ). Compounds with a green tag meet that profile — click a name to rotate its pose and see which residues it touches.'>ยา acarbose ยับยั้ง α-amylase แรงเกินไป แป้งที่ไม่ถูกย่อยจึงไปหมักในลำไส้ใหญ่จนท้องอืด ส่วนผสมอาหารที่ดีจึงควรจับ <b>α-glucosidase แน่น แต่ปล่อย α-amylase ไว้</b> หน้านี้คือผล docking สาร 11 ชนิดจากรำข้าวสีม่วงบนเอนไซม์มนุษย์ทั้งสองตัว (MGAM จาก PDB 2QMJ และ HPA จาก PDB 3BAJ) สารที่ติดป้ายสีเขียวคือสารที่เข้าเกณฑ์นี้ กดชื่อสารเพื่อหมุนดูว่าเกาะกรดอะมิโนตัวไหน</p>
   </header>
 
   <section class="keys">
-    <div class="key"><span class="kn">ปัญหา</span>รำข้าวไรซ์เบอร์รี่เป็นผลพลอยได้ราคาต่ำที่มีสารออกฤทธิ์หลายกลุ่มพร้อมกัน
+    <div class="key" data-en='<span class="kn">Problem</span>Riceberry bran is a low-value by-product that carries several classes of active compounds at once, and nobody knew which one to extract and test first.'><span class="kn">ปัญหา</span>รำข้าวไรซ์เบอร์รี่เป็นผลพลอยได้ราคาต่ำที่มีสารออกฤทธิ์หลายกลุ่มพร้อมกัน
       แต่ไม่มีใครรู้ว่าควรสกัดสารตัวไหนไปทดสอบก่อน</div>
-    <div class="key"><span class="kn">สิ่งที่ทำ</span>จำลองการจับโมเลกุลของสาร 11 ชนิดในรำ เทียบกับยาอะคาร์โบส
+    <div class="key" data-en='<span class="kn">What was done</span>Molecular docking of 11 bran constituents against acarbose on two human starch-digesting enzymes, 78 runs in all, with the protocol validated by re-docking.'><span class="kn">สิ่งที่ทำ</span>จำลองการจับโมเลกุลของสาร 11 ชนิดในรำ เทียบกับยาอะคาร์โบส
       บนเอนไซม์ย่อยแป้งของมนุษย์สองตัว รวม 78 การทดลอง พร้อมตรวจความถูกต้องของวิธี</div>
-    <div class="key"><span class="kn">ผลที่ได้</span>สารที่จับแน่นที่สุดคือแกมมา-โอริซานอล แต่ไม่ละลายน้ำจึงใช้ในเครื่องดื่มไม่ได้
+    <div class="key" data-en='<span class="kn">Result</span>The tightest binders are the γ-oryzanol esters, but they do not dissolve in water and cannot go into a drink. <b>The anthocyanins are the only group that binds well and dissolves</b>, so that is the fraction to carry forward.'><span class="kn">ผลที่ได้</span>สารที่จับแน่นที่สุดคือแกมมา-โอริซานอล แต่ไม่ละลายน้ำจึงใช้ในเครื่องดื่มไม่ได้
       <b>แอนโทไซยานินเป็นกลุ่มเดียวที่ทั้งจับได้ดีและละลายน้ำ</b> จึงเป็นส่วนที่ควรสกัดไปทดสอบต่อ</div>
   </section>
 
   <section class="panel story">
-    <h2>ที่มาและความสำคัญ</h2>
-    <p>ทุกครั้งที่สีข้าว ชั้นรำจะถูกขัดออกเป็นผลพลอยได้ที่ขายได้ราคาต่ำ ส่วนใหญ่จบที่อาหารสัตว์ เพราะไขมันในรำ (ราว 18–21%)
+    <h2 data-en="Where the problem comes from">ที่มาและความสำคัญ</h2>
+    <figure class="illus wide-illus"><img src="ai_bran.jpg" alt="รำข้าวไรซ์เบอร์รี่">
+      <figcaption data-en='Riceberry bran — the layer polished off the grain and sold for the least · <span class="aitag">AI-generated illustration</span>'>รำข้าวไรซ์เบอร์รี่ ส่วนที่ถูกขัดออกจากเมล็ดและขายได้ราคาต่ำที่สุด · <span class="aitag">ภาพประกอบสร้างด้วย AI</span></figcaption></figure>
+    <p data-en='Every time rice is milled the bran layer is polished off as a low-value by-product that mostly ends up as animal feed, because its own lipase turns the oil it carries (about 18–21%) rancid within hours of milling. Yet in pigmented rice such as <b>Riceberry</b> the bran is exactly where the valuable compounds sit: anthocyanins, γ-oryzanol, vitamin E and phenolic acids.'>ทุกครั้งที่สีข้าว ชั้นรำจะถูกขัดออกเป็นผลพลอยได้ที่ขายได้ราคาต่ำ ส่วนใหญ่จบที่อาหารสัตว์ เพราะไขมันในรำ (ราว 18–21%)
     ถูกเอนไซม์ไลเปสในตัวมันเองย่อยจนเหม็นหืนอย่างรวดเร็วหลังสี แต่รำของข้าวสีอย่าง<b>ไรซ์เบอร์รี่</b>
     กลับเป็นส่วนที่เก็บสารสำคัญไว้มากที่สุด ทั้งแอนโทไซยานิน แกมมา-โอริซานอล วิตามินอี และกรดฟีนอลิก</p>
-    <p>อีกด้านหนึ่ง ยา <b>acarbose</b> ที่ใช้ชะลอการย่อยแป้งในผู้ป่วยเบาหวานมีผลข้างเคียงทางเดินอาหารสูง
+    <p data-en='On the other side, <b>acarbose</b>, the drug used to slow starch digestion in diabetes, is poorly tolerated (flatulence in 74% of 1,255 patients versus 29% on placebo, US prescribing information) because it blocks α-amylase so strongly that undigested starch ferments in the colon. Earlier work showed that anthocyanins from pigmented rice inhibit both starch-digesting enzymes in vitro, but <b>nobody had compared the constituents of Riceberry bran against each other on the human enzymes</b> to say which one to extract first — the question that has to be answered before spending money in the lab. This project answers it with molecular docking.'>อีกด้านหนึ่ง ยา <b>acarbose</b> ที่ใช้ชะลอการย่อยแป้งในผู้ป่วยเบาหวานมีผลข้างเคียงทางเดินอาหารสูง
     (ท้องอืด 74% ของผู้ป่วย 1,255 ราย เทียบกับ 29% ในกลุ่มยาหลอก ตามเอกสารกำกับยาของสหรัฐฯ) เพราะยับยั้งแอลฟา-อะไมเลสแรงเกินไป
     จนแป้งที่ไม่ถูกย่อยไปหมักในลำไส้ใหญ่ งานวิจัยก่อนหน้านี้พบว่าแอนโทไซยานินจากข้าวสียับยั้งเอนไซม์ย่อยแป้งได้ในหลอดทดลอง
     แต่<b>ยังไม่มีใครเทียบสารในรำไรซ์เบอร์รี่ด้วยกันเองบนเอนไซม์ของมนุษย์</b> ว่าควรสกัดตัวไหนไปทดสอบก่อน
     ซึ่งเป็นคำถามที่ต้องตอบก่อนจะลงทุนทำแล็บจริง — โครงงานนี้ตอบคำถามนั้นด้วยการจำลองการจับโมเลกุล</p>
   </section>
 
-  <h2 class="steer">ผลการจัดอันดับ — หมุนดูได้เองว่าสารแต่ละตัวเกาะตรงไหน</h2>
+  <h2 class="steer" data-en="The ranking — rotate any pose to see which residues it touches">ผลการจัดอันดับ — หมุนดูได้เองว่าสารแต่ละตัวเกาะตรงไหน</h2>
   <section class="bench">
     <div class="panel">
       <div class="toolbar">
@@ -167,18 +191,18 @@ td.ok{color:var(--leaf);font-weight:600} td.no{color:var(--pink);font-weight:600
           <button id="t-MGAM" aria-pressed="true" data-t="MGAM">α-Glucosidase</button>
           <button id="t-HPA" aria-pressed="false" data-t="HPA">α-Amylase</button>
         </div>
-        <button class="chipbtn" id="btn-surf" aria-pressed="false">พื้นผิวโพรง</button>
-        <button class="chipbtn" id="btn-xtal" aria-pressed="false">acarbose จากผลึก</button>
-        <button class="chipbtn" id="btn-spin" aria-pressed="true">หมุน</button>
+        <button class="chipbtn" id="btn-surf" aria-pressed="false" data-en="Pocket surface">พื้นผิวโพรง</button>
+        <button class="chipbtn" id="btn-xtal" aria-pressed="false" data-en="Crystal acarbose">acarbose จากผลึก</button>
+        <button class="chipbtn" id="btn-spin" aria-pressed="true" data-en="Spin">หมุน</button>
       </div>
-      <div class="viewer-box"><div id="viewer"></div><span class="hint">ลากเพื่อหมุน · scroll เพื่อซูม</span></div>
+      <div class="viewer-box"><div id="viewer"></div><span class="hint" data-en="drag to rotate · scroll to zoom">ลากเพื่อหมุน · scroll เพื่อซูม</span></div>
       <div class="caption">
         <div class="name" id="cap-name">—</div>
         <div class="legend">
-          <span><i style="background:var(--sun)"></i>กรดอะมิโนเร่งปฏิกิริยา</span>
-          <span><i style="background:var(--leaf)"></i>ระยะพันธะไฮโดรเจน ≤ 3.5 Å</span>
-          <span><i style="background:var(--berry-soft)"></i>สัมผัสอื่น ≤ 4 Å</span>
-          <span><i style="background:var(--leaf)"></i>ป้าย "เข้าเกณฑ์" = จับ α-glucosidase ได้เทียบเท่าหรือดีกว่า acarbose และจับ α-amylase อ่อนกว่า</span>
+          <span data-en='<i style="background:var(--sun)"></i>catalytic residues'><i style="background:var(--sun)"></i>กรดอะมิโนเร่งปฏิกิริยา</span>
+          <span data-en='<i style="background:var(--leaf)"></i>hydrogen bond ≤ 3.5 Å'><i style="background:var(--leaf)"></i>ระยะพันธะไฮโดรเจน ≤ 3.5 Å</span>
+          <span data-en='<i style="background:var(--berry-soft)"></i>other contact ≤ 4 Å'><i style="background:var(--berry-soft)"></i>สัมผัสอื่น ≤ 4 Å</span>
+          <span data-en='<i style="background:var(--leaf)"></i>the green tag = binds α-glucosidase at least as tightly as acarbose and α-amylase more weakly'><i style="background:var(--leaf)"></i>ป้าย "เข้าเกณฑ์" = จับ α-glucosidase ได้เทียบเท่าหรือดีกว่า acarbose และจับ α-amylase อ่อนกว่า</span>
         </div>
         <div class="chips" id="cap-chips"></div>
       </div>
@@ -186,83 +210,92 @@ td.ok{color:var(--leaf);font-weight:600} td.no{color:var(--pink);font-weight:600
 
     <div class="panel">
       <h2 id="list-title">อันดับพลังงานการจับ</h2>
-      <p class="note" style="margin:4px 0 10px">ค่าเฉลี่ย ± SD จาก 3 รอบ (seed ต่างกัน) หน่วย kcal/mol ยิ่งติดลบมากยิ่งจับแน่น</p>
+      <p class="note" style="margin:4px 0 10px" data-en="Mean ± SD of 3 independent runs (different seeds), in kcal/mol. More negative means tighter predicted binding.">ค่าเฉลี่ย ± SD จาก 3 รอบ (seed ต่างกัน) หน่วย kcal/mol ยิ่งติดลบมากยิ่งจับแน่น</p>
       <div class="list" id="list" role="listbox" aria-label="สารที่ทดสอบ"></div>
     </div>
   </section>
 
   <section class="gallery">
-    <h2 class="steer">รูปผลการศึกษา</h2>
+    <h2 class="steer" data-en="Result figures">รูปผลการศึกษา</h2>
     <div class="figs">
       <figure><a href="selectivity.png" target="_blank"><img src="selectivity.png" alt="แผนที่การเลือกจับ"></a>
-        <figcaption><b>รูปที่ 1</b> ตำแหน่งของสารแต่ละตัวเทียบกับอะคาร์โบสบนเอนไซม์ทั้งสอง วงกลมคือสารที่ละลายน้ำ สี่เหลี่ยมคือสารที่ไม่ละลาย
+        <figcaption data-en='<b>Fig. 1</b> Each constituent placed against acarbose on both enzymes. Circles dissolve in water, squares do not; the shaded area is where a usable food candidate would sit.'><b>รูปที่ 1</b> ตำแหน่งของสารแต่ละตัวเทียบกับอะคาร์โบสบนเอนไซม์ทั้งสอง วงกลมคือสารที่ละลายน้ำ สี่เหลี่ยมคือสารที่ไม่ละลาย
         พื้นที่แรเงาคือโซนที่ส่วนผสมอาหารควรอยู่</figcaption></figure>
       <figure><a href="fingerprint.png" target="_blank"><img src="fingerprint.png" alt="กรดอะมิโนที่สัมผัส"></a>
-        <figcaption><b>รูปที่ 2</b> กรดอะมิโนที่แต่ละสารเข้าไปสัมผัส สีเข้มคือพันธะไฮโดรเจน สีอ่อนคือสัมผัสในระยะ 4 อังสตรอม
+        <figcaption data-en='<b>Fig. 2</b> Which active-site residues each pose touches: dark = hydrogen bond, pale = contact within 4 Å, catalytic residues labelled in pink.'><b>รูปที่ 2</b> กรดอะมิโนที่แต่ละสารเข้าไปสัมผัส สีเข้มคือพันธะไฮโดรเจน สีอ่อนคือสัมผัสในระยะ 4 อังสตรอม
         ชื่อสีชมพูคือกรดอะมิโนเร่งปฏิกิริยา</figcaption></figure>
       <figure><a href="efficiency_size.png" target="_blank"><img src="efficiency_size.png" alt="ประสิทธิภาพต่ออะตอมและอิทธิพลของขนาดโมเลกุล"></a>
-        <figcaption><b>รูปที่ 3</b> ซ้าย ค่าการจับต่ออะตอม ขวา ความสัมพันธ์ระหว่างคะแนน docking กับขนาดโมเลกุล
+        <figcaption data-en='<b>Fig. 3</b> Left, binding per heavy atom. Right, how the docking score rises with molecular size — the reason solubility and efficiency were scored alongside the raw value.'><b>รูปที่ 3</b> ซ้าย ค่าการจับต่ออะตอม ขวา ความสัมพันธ์ระหว่างคะแนน docking กับขนาดโมเลกุล
         ซึ่งเป็นเหตุผลที่ต้องดูการละลายและประสิทธิภาพต่ออะตอมควบคู่กัน</figcaption></figure>
       <figure class="wide"><a href="forecast.png" target="_blank"><img src="forecast.png" alt="ผลที่คาดการณ์จากงานวิจัยทั่วโลก"></a>
-        <figcaption><b>รูปที่ 4</b> ค่าที่งานวิจัยทั่วโลกวัดไว้แล้ว และเส้นคาดการณ์ว่าการทดสอบเอนไซม์จริงของโครงงานนี้ควรออกมาแบบใด</figcaption></figure>
+        <figcaption data-en='<b>Fig. 4</b> What the published literature already measured, and the predicted dose–response the planned bench assay should produce.'><b>รูปที่ 4</b> ค่าที่งานวิจัยทั่วโลกวัดไว้แล้ว และเส้นคาดการณ์ว่าการทดสอบเอนไซม์จริงของโครงงานนี้ควรออกมาแบบใด</figcaption></figure>
     </div>
   </section>
 
   <section class="grid2">
     <div class="panel">
-      <h2>วิธีการ</h2>
+      <h2 data-en="Methods">วิธีการ</h2>
       <ul class="facts" id="methods"></ul>
     </div>
     <div class="panel">
-      <h2>ตรวจความถูกต้อง</h2>
+      <h2 data-en="Validation">ตรวจความถูกต้อง</h2>
       <ul class="facts" id="valid"></ul>
-      <p class="note" style="margin-top:12px">ผลนี้เป็นการคำนวณ ยังไม่ใช่ผลทดลองในหลอดทดลอง ขั้นต่อไปคือวัดค่า IC<sub>50</sub> ของสารสกัดรำไรซ์เบอร์รี่จริง</p>
+      <p class="note" style="margin-top:12px" data-en="These are computed values, not bench results. The next step is to measure the IC₅₀ of a real Riceberry bran extract.">ผลนี้เป็นการคำนวณ ยังไม่ใช่ผลทดลองในหลอดทดลอง ขั้นต่อไปคือวัดค่า IC<sub>50</sub> ของสารสกัดรำไรซ์เบอร์รี่จริง</p>
     </div>
   </section>
 
   <section class="panel">
-    <h2>ความเหมือนยา (Lipinski / Veber)</h2>
+    <h2 data-en="Drug-likeness (Lipinski / Veber)">ความเหมือนยา (Lipinski / Veber)</h2>
     <div class="tablebox"><table id="dl"></table></div>
   </section>
 
 
   <section class="panel story">
-    <h2>ประโยชน์และการนำไปใช้</h2>
+    <h2 data-en="What the result is good for">ประโยชน์และการนำไปใช้</h2>
+    <figure class="illus"><img src="ai_extraction.jpg" alt="ขั้นตอนการสกัด">
+      <figcaption data-en='The route the ranking points to: bran → steeped in acidified water → filtered → an anthocyanin-rich extract · <span class="aitag">AI-generated illustration</span>'>เส้นทางที่ผลการจัดลำดับชี้ให้ทำ รำ → แช่ในน้ำที่เป็นกรด → กรองแยก → สารสกัดเข้มข้นที่มีแอนโทไซยานิน ·
+      <span class="aitag">ภาพประกอบสร้างด้วย AI</span></figcaption></figure>
     <ul class="uses">
-      <li><b>ชี้เป้าให้ห้องแล็บ</b> แทนที่จะทดสอบสารทั้ง 11 ชนิดแบบสุ่ม ผลการจัดลำดับบอกว่าให้เริ่มจาก<b>ส่วนสกัดน้ำที่เป็นกรด
+      <li data-en='<b>It tells the lab where to start.</b> Instead of assaying all 11 constituents at random, the ranking says to begin with the <b>acidified aqueous, anthocyanin-rich fraction</b> — not whole bran, not the oil — which saves time, reagents and money.'><b>ชี้เป้าให้ห้องแล็บ</b> แทนที่จะทดสอบสารทั้ง 11 ชนิดแบบสุ่ม ผลการจัดลำดับบอกว่าให้เริ่มจาก<b>ส่วนสกัดน้ำที่เป็นกรด
       ซึ่งมีแอนโทไซยานินสูง</b> ไม่ใช่รำทั้งก้อนหรือส่วนน้ำมัน ประหยัดทั้งเวลา สารเคมี และงบประมาณ</li>
-      <li><b>คัดสารที่ใช้ไม่ได้ออกตั้งแต่ต้น</b> เอสเทอร์ของแกมมา-โอริซานอลจับเอนไซม์ได้แน่นที่สุดก็จริง แต่ logP มากกว่า 10
+      <li data-en='<b>It rules out what cannot work.</b> The γ-oryzanol esters bind most tightly, but with logP above 10 they will not dissolve where the enzymes act and they sit in the oil fraction, so they do not belong in a drink.'><b>คัดสารที่ใช้ไม่ได้ออกตั้งแต่ต้น</b> เอสเทอร์ของแกมมา-โอริซานอลจับเอนไซม์ได้แน่นที่สุดก็จริง แต่ logP มากกว่า 10
       จึงไม่ละลายในที่ที่เอนไซม์ทำงาน และอยู่ในส่วนน้ำมัน ไม่เหมาะกับเครื่องดื่ม</li>
-      <li><b>กำหนดการทดลองยืนยันที่ชัดเจน</b> ต้องวัดค่า IC₅₀ บนเอนไซม์ทั้งสองตัวคู่กัน แล้วรายงานดัชนีความจำเพาะ
+      <li data-en='<b>It defines the confirming experiment.</b> Measure IC₅₀ on both enzymes side by side and report a selectivity index (IC₅₀ amylase ÷ IC₅₀ glucosidase), so potency and selectivity are measured rather than inferred.'><b>กำหนดการทดลองยืนยันที่ชัดเจน</b> ต้องวัดค่า IC₅₀ บนเอนไซม์ทั้งสองตัวคู่กัน แล้วรายงานดัชนีความจำเพาะ
       (IC₅₀ อะไมเลส ÷ IC₅₀ กลูโคซิเดส) เพื่อให้วัดความแรงและความจำเพาะจริง ไม่ใช่อนุมานเอา</li>
-      <li><b>เพิ่มมูลค่าผลพลอยได้</b> เปลี่ยนรำข้าวที่ขายเป็นอาหารสัตว์ให้เป็นวัตถุดิบตั้งต้นของส่วนผสมอาหารที่มีข้อมูลรองรับ
+      <li data-en='<b>It adds value to a by-product.</b> Bran sold as animal feed becomes the starting material for a food ingredient with data behind it — useful to rice mills and to the farmers who grow Riceberry.'><b>เพิ่มมูลค่าผลพลอยได้</b> เปลี่ยนรำข้าวที่ขายเป็นอาหารสัตว์ให้เป็นวัตถุดิบตั้งต้นของส่วนผสมอาหารที่มีข้อมูลรองรับ
       เป็นประโยชน์กับโรงสีและเกษตรกรผู้ปลูกข้าวไรซ์เบอร์รี่</li>
     </ul>
+    <figure class="illus"><img src="ai_value_chain.jpg" alt="เส้นทางการเพิ่มมูลค่า">
+      <figcaption data-en='The value chain: rice mill → bran that used to be waste → a tested extract → a product · <span class="aitag">AI-generated illustration</span>'>เส้นทางการเพิ่มมูลค่า โรงสี → รำที่เคยเป็นของเหลือ → สารสกัดที่ผ่านการทดสอบ → ผลิตภัณฑ์ ·
+      <span class="aitag">ภาพประกอบสร้างด้วย AI</span></figcaption></figure>
   </section>
 
-  <section class="panel story">
-    <h2>ผลิตภัณฑ์ต้นแบบ</h2>
-    <p>ส่วนสกัดที่คัดได้ถูกออกแบบให้ไปต่อเป็น<b>เครื่องดื่มเจลลี่ไม่เติมน้ำตาล</b> ซึ่งเป็นรูปแบบที่เข้ากับธรรมชาติของแอนโทไซยานิน
+  <section class="panel story prod">
+    <h2 data-en="Prototype product">ผลิตภัณฑ์ต้นแบบ</h2>
+    <figure class="illus side"><img src="ai_jelly_drink.jpg" alt="ต้นแบบเครื่องดื่มเจลลี่">
+      <figcaption data-en='The intended format: a clear 200 ml bottle. The label is blank because no claim is supported by test data yet · <span class="aitag">AI-generated illustration, not a photograph of a real product</span>'>หน้าตาที่ตั้งใจให้เป็น ขวดใส 200 มิลลิลิตร ฉลากยังว่างเพราะยังไม่มีข้อมูลทดสอบมารองรับข้อความใด ·
+      <span class="aitag">ภาพประกอบสร้างด้วย AI ไม่ใช่ภาพถ่ายผลิตภัณฑ์จริง</span></figcaption></figure>
+    <p data-en='The selected fraction is meant to go into a <b>no-added-sugar jelly drink</b>, a format that suits anthocyanins: they survive acid and a short heat step, but not long baking.'>ส่วนสกัดที่คัดได้ถูกออกแบบให้ไปต่อเป็น<b>เครื่องดื่มเจลลี่ไม่เติมน้ำตาล</b> ซึ่งเป็นรูปแบบที่เข้ากับธรรมชาติของแอนโทไซยานิน
     คือทนกรดและความร้อนสั้น ๆ แต่ไม่ทนการอบนาน</p>
     <ul class="uses">
-      <li><b>กระบวนการ</b> ปรับ pH 3.2–3.5 ให้สีและสารคงตัว ฆ่าเชื้อที่ 80 °C นาน 1 นาที แล้วบรรจุขณะร้อน</li>
-      <li><b>สูตรทดลอง</b> ใส่สารสกัด 3 ระดับ คือ 20 / 30 / 40% เพื่อหาจุดที่รสชาติยังดีและสารยังพอ</li>
-      <li><b>การทดสอบผู้บริโภค</b> ชิมแบบ 9-point hedonic ผู้ทดสอบอย่างน้อย 30 คน</li>
-      <li><b>การกล่าวอ้าง</b> ฉลากระบุเฉพาะข้อเท็จจริง ไม่กล่าวอ้างสรรพคุณทางสุขภาพ เพราะยังไม่มีผลการทดสอบในคนและยังไม่ได้รับอนุญาตจาก อย.</li>
+      <li data-en='<b>Process.</b> pH adjusted to 3.2–3.5 to keep the colour and the compounds stable, heated at 80 °C for 1 minute, then hot-filled.'><b>กระบวนการ</b> ปรับ pH 3.2–3.5 ให้สีและสารคงตัว ฆ่าเชื้อที่ 80 °C นาน 1 นาที แล้วบรรจุขณะร้อน</li>
+      <li data-en='<b>Trial formulas.</b> Three extract levels — 20 / 30 / 40% — to find the point where the taste still works and enough of the compound remains.'><b>สูตรทดลอง</b> ใส่สารสกัด 3 ระดับ คือ 20 / 30 / 40% เพื่อหาจุดที่รสชาติยังดีและสารยังพอ</li>
+      <li data-en='<b>Consumer testing.</b> A 9-point hedonic test with at least 30 panellists.'><b>การทดสอบผู้บริโภค</b> ชิมแบบ 9-point hedonic ผู้ทดสอบอย่างน้อย 30 คน</li>
+      <li data-en='<b>Claims.</b> The label states facts only. No health claim is made, because there is no human data and no approval from the Thai FDA.'><b>การกล่าวอ้าง</b> ฉลากระบุเฉพาะข้อเท็จจริง ไม่กล่าวอ้างสรรพคุณทางสุขภาพ เพราะยังไม่มีผลการทดสอบในคนและยังไม่ได้รับอนุญาตจาก อย.</li>
     </ul>
   </section>
 
   <section class="downloads">
-    <b>เอกสารประกอบโครงงาน</b> ·
-    <a href="Poster_Puttitada_Pruetchayakul.pdf">โปสเตอร์ (PDF)</a> ·
-    <a href="Supplementary_Figures_and_Data.pdf">ข้อมูลและรูปเพิ่มเติม (PDF)</a> ·
-    <a href="Forecast_from_literature.pdf">ผลที่คาดการณ์จากงานวิจัยทั่วโลก (PDF)</a> ·
-    <a href="https://github.com/TANACHAT007/riceberry-bran-docking">สคริปต์และผลดิบทั้งหมดบน GitHub</a>
-    <div style="margin-top:8px;color:var(--muted);font-size:13.5px">ค่าที่แสดงบนหน้านี้คำนวณด้วยเครื่องของผู้จัดทำเอง รันซ้ำได้จากสคริปต์ในลิงก์ GitHub · docking บอกการจับที่ทำนายได้ ไม่ใช่ความแรงในการยับยั้ง และไม่มีการกล่าวอ้างสรรพคุณทางสุขภาพ</div>
+    <b data-en="Project documents">เอกสารประกอบโครงงาน</b> ·
+    <a href="Poster_Puttitada_Pruetchayakul.pdf" data-en="Poster (PDF)">โปสเตอร์ (PDF)</a> ·
+    <a href="Supplementary_Figures_and_Data.pdf" data-en="Supplementary figures and data (PDF)">ข้อมูลและรูปเพิ่มเติม (PDF)</a> ·
+    <a href="Forecast_from_literature.pdf" data-en="Forecast from the literature (PDF)">ผลที่คาดการณ์จากงานวิจัยทั่วโลก (PDF)</a> ·
+    <a href="https://github.com/TANACHAT007/riceberry-bran-docking" data-en="All scripts and raw results on GitHub">สคริปต์และผลดิบทั้งหมดบน GitHub</a>
+    <div style="margin-top:8px;color:var(--muted);font-size:13.5px" data-en="Every value on this page was computed on the author's own machine and can be reproduced from the scripts in the GitHub link. Docking predicts binding, not inhibitory potency, and no health claim is made.">ค่าที่แสดงบนหน้านี้คำนวณด้วยเครื่องของผู้จัดทำเอง รันซ้ำได้จากสคริปต์ในลิงก์ GitHub · docking บอกการจับที่ทำนายได้ ไม่ใช่ความแรงในการยับยั้ง และไม่มีการกล่าวอ้างสรรพคุณทางสุขภาพ</div>
   </section>
 
   <section class="refs">
-    <h2>อ้างอิง</h2>
+    <h2 data-en="References">อ้างอิง</h2>
     <ol>
       <li>Sim L, Quezada-Calvillo R, Sterchi EE, Nichols BL, Rose DR. Human intestinal maltase-glucoamylase: crystal structure of the N-terminal catalytic subunit with acarbose. <i>J Mol Biol.</i> 2008;375:782. โครงสร้าง <a href="https://www.rcsb.org/structure/2QMJ">PDB 2QMJ</a></li>
       <li>Maurus R, Begum A, Williams LK, Fredriksen JR, Zhang R, Withers SG. Alternative catalytic anions differentially modulate human α-amylase activity and specificity. <i>Biochemistry.</i> 2008;47:3332. โครงสร้าง <a href="https://www.rcsb.org/structure/3BAJ">PDB 3BAJ</a></li>
@@ -270,8 +303,8 @@ td.ok{color:var(--leaf);font-weight:600} td.no{color:var(--pink);font-weight:600
       <li>Meeko (Forli Lab, Scripps Research) · RDKit · PDBFixer/OpenMM: Eastman P, et al. <i>PLoS Comput Biol.</i> 2017;13:e1005659 · โครงสร้างสารจาก PubChem: Kim S, et al. <i>Nucleic Acids Res.</i> 2023;51:D1373</li>
       <li>Akkarachiyasit S, Charoenlertkul P, Yibchok-anun S, Adisakwattana S. Inhibitory activities of cyanidin and its glycosides and synergistic effect with acarbose against intestinal α-glucosidase and pancreatic α-amylase. <i>Int J Mol Sci.</i> 2010;11:3387. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC2956102/">อ่านฉบับเต็ม</a></li>
       <li>Settu R, Selvaraj D, Padikasan IA. GCMS profiling and in silico screening of alpha-amylase inhibitors in traditional pigmented rice varieties of Tamil Nadu. <i>Food Bioscience.</i> 2021;42:101154</li>
-      <li>ข้อมูลผลข้างเคียงของ acarbose: เอกสารกำกับยาของสหรัฐอเมริกา (flatulence 74% ของผู้ป่วย 1,255 ราย เทียบกับ 29% ของกลุ่มยาหลอก 999 ราย)</li>
-      <li>ข้าวไรซ์เบอร์รี่เป็นลูกผสมระหว่างข้าวเจ้าหอมนิลกับข้าวขาวดอกมะลิ 105 — ศูนย์วิทยาศาสตร์ข้าว มหาวิทยาลัยเกษตรศาสตร์</li>
+      <li data-en="Acarbose tolerability: US prescribing information (flatulence in 74% of 1,255 patients versus 29% of 999 on placebo)">ข้อมูลผลข้างเคียงของ acarbose: เอกสารกำกับยาของสหรัฐอเมริกา (flatulence 74% ของผู้ป่วย 1,255 ราย เทียบกับ 29% ของกลุ่มยาหลอก 999 ราย)</li>
+      <li data-en="Riceberry is a cross of Hom Nil and Khao Dawk Mali 105 — Rice Science Center, Kasetsart University">ข้าวไรซ์เบอร์รี่เป็นลูกผสมระหว่างข้าวเจ้าหอมนิลกับข้าวขาวดอกมะลิ 105 — ศูนย์วิทยาศาสตร์ข้าว มหาวิทยาลัยเกษตรศาสตร์</li>
     </ol>
   </section>
 </div>
@@ -288,6 +321,21 @@ const GROUP = {
   "protocatechuic acid":["กรดฟีนอลิก","phen"],"ferulic acid":["กรดฟีนอลิก","phen"],
   "p-coumaric acid":["กรดฟีนอลิก","phen"],"vanillic acid":["กรดฟีนอลิก","phen"],
   "acarbose":["ยาอ้างอิง","ctrl"]};
+let lang = (localStorage.getItem("rb-lang") === "en") ? "en" : "th";
+const S = {
+  th:{ctrl:"Acarbose (ยาควบคุม)", win:"เข้าเกณฑ์", rank:t=>`อันดับการจับ ${t==="MGAM"?"α-glucosidase (MGAM)":"α-amylase (HPA)"}`,
+      cmpd:"สาร", items:"ข้อ", pass:"ผ่าน", fail:"ไม่ผ่าน",
+      cls:{antho:"แอนโทไซยานิน",oryz:"แกมมา-โอริซานอล",vite:"วิตามินอี",flav:"ฟลาโวนอยด์",phen:"กรดฟีนอลิก",ctrl:"ยาอ้างอิง"},
+      valid:V=>[["Redock RMSD",`เอา acarbose จากผลึก MGAM ออกแล้ว dock กลับ ห่างจากตำแหน่งเดิม ${V.MGAM.rmsd}–${Math.max(...V.MGAM.redock.map(r=>r.rmsd))} Å ทั้ง 3 seed (เกณฑ์ที่ใช้กันทั่วไปคือประมาณ 2 Å)`],
+        ["ซ้อนทับผลึก",`อะตอม acarbose ที่ docking ได้อยู่ในระยะ 2 Å ของลิแกนด์ในผลึก: MGAM ${Math.round(V.MGAM.xtal_overlap_2A*100)}%, HPA ${Math.round(V.HPA.xtal_overlap_2A*100)}%`],
+        ["ความซ้ำได้","รัน 3 seed อิสระต่อคู่ ค่า SD แสดงในรายการ"]]},
+  en:{ctrl:"Acarbose (reference drug)", win:"meets profile", rank:t=>`Binding ranking — ${t==="MGAM"?"α-glucosidase (MGAM)":"α-amylase (HPA)"}`,
+      cmpd:"Compound", items:"violations", pass:"pass", fail:"fail",
+      cls:{antho:"anthocyanin",oryz:"γ-oryzanol",vite:"vitamin E",flav:"flavonoid",phen:"phenolic acid",ctrl:"reference drug"},
+      valid:V=>[["Redock RMSD",`Crystal acarbose removed from MGAM and docked back landed ${V.MGAM.rmsd}–${Math.max(...V.MGAM.redock.map(r=>r.rmsd))} Å from its original pose in all 3 seeds (the usual threshold is about 2 Å)`],
+        ["Crystal overlap",`Docked acarbose atoms within 2 Å of the crystal ligand: MGAM ${Math.round(V.MGAM.xtal_overlap_2A*100)}%, HPA ${Math.round(V.HPA.xtal_overlap_2A*100)}%`],
+        ["Reproducibility","3 independent seeds per pair; the SD is shown in the list"]]}
+};
 const css = n => getComputedStyle(document.documentElement).getPropertyValue(n).trim();
 let tgt = "MGAM", lig = null, surf = false, xtal = false, spin = true, viewer = null;
 
@@ -298,6 +346,7 @@ function selective(x){
   return x[tgt].mean - (tgt==="MGAM" ? xtal : a.HPA.mean) <= 0.2 && x.HPA.mean - a.HPA.mean > 0;
 }
 
+function name(l){ return l==="acarbose" ? S[lang].ctrl : TH[l]; }
 function rows(){ return DATA.rows.slice().sort((a,b)=>a[tgt].mean-b[tgt].mean); }
 
 function renderList(){
@@ -306,7 +355,7 @@ function renderList(){
     const s=x[tgt], ctrl=x.ligand==="acarbose", beat=!ctrl && selective(x);
     return `<div class="row${ctrl?" ctrl":""}" role="option" tabindex="0" data-l="${x.ligand}" aria-selected="${x.ligand===lig}">
       <span class="rank">${i+1}</span>
-      <div><div class="lname">${TH[x.ligand]}<span class="cls c-${GROUP[x.ligand][1]}">${GROUP[x.ligand][0]}</span>${beat?'<span class="tag win">เข้าเกณฑ์</span>':""}</div>
+      <div><div class="lname">${name(x.ligand)}<span class="cls c-${GROUP[x.ligand][1]}">${S[lang].cls[GROUP[x.ligand][1]]}</span>${beat?`<span class="tag win">${S[lang].win}</span>`:""}</div>
       <div class="bar"><span style="width:${(s.mean/min*100).toFixed(1)}%"></span></div></div>
       <div class="score">${s.mean.toFixed(2)}<small>± ${s.sd.toFixed(2)}</small></div></div>`;
   }).join("");
@@ -341,31 +390,41 @@ function draw(){
 
 function setTarget(t){
   tgt=t; document.querySelectorAll(".seg button").forEach(b=>b.setAttribute("aria-pressed",b.dataset.t===t));
-  document.getElementById("list-title").textContent = t==="MGAM"?"อันดับการจับ α-glucosidase (MGAM)":"อันดับการจับ α-amylase (HPA)";
+  document.getElementById("list-title").textContent = S[lang].rank(t);
   if(!lig) lig = rows().find(r=>r.ligand!=="acarbose").ligand;
   renderList(); draw();
 }
 function toggle(id,get,set){const b=document.getElementById(id);b.onclick=()=>{set(!get());b.setAttribute("aria-pressed",get());draw();};}
 
 function statics(){
-  const M = DATA.methods;
+  const M = (lang==="en" && DATA.methods_en) ? DATA.methods_en : DATA.methods;
   document.getElementById("methods").innerHTML = M.map(([k,v])=>`<li><b>${k}</b><span>${v}</span></li>`).join("");
   const V = DATA.validation;
-  document.getElementById("valid").innerHTML = [
-    ["Redock RMSD", `เอา acarbose จากผลึก MGAM ออกแล้ว dock กลับ ห่างจากตำแหน่งเดิม ${V.MGAM.rmsd}–${Math.max(...V.MGAM.redock.map(r=>r.rmsd))} Å ทั้ง 3 seed (เกณฑ์ที่ใช้กันทั่วไปคือประมาณ 2 Å)`],
-    ["ซ้อนทับผลึก", `อะตอม acarbose ที่ docking ได้อยู่ในระยะ 2 Å ของลิแกนด์ในผลึก: MGAM ${Math.round(V.MGAM.xtal_overlap_2A*100)}%, HPA ${Math.round(V.HPA.xtal_overlap_2A*100)}%`],
-    ["ความซ้ำได้", "รัน 3 seed อิสระต่อคู่ ค่า SD แสดงในรายการ"]
-  ].map(([k,v])=>`<li><b>${k}</b><span>${v}</span></li>`).join("");
+  document.getElementById("valid").innerHTML = S[lang].valid(V).map(([k,v])=>`<li><b>${k}</b><span>${v}</span></li>`).join("");
   const cols=["MW","logP","HBD","HBA","TPSA","RotB"];
-  document.getElementById("dl").innerHTML = `<thead><tr><th>สาร</th>${cols.map(c=>`<th>${c}</th>`).join("")}<th>Lipinski</th><th>Veber</th></tr></thead><tbody>`+
-    DATA.rows.map(r=>`<tr><td>${TH[r.ligand]}</td>${cols.map(c=>`<td>${typeof r[c]==="number"&&!Number.isInteger(r[c])?r[c].toFixed(1):r[c]}</td>`).join("")}
-    <td class="${r.Lipinski_violations<=1?"ok":"no"}">${r.Lipinski_violations} ข้อ</td><td class="${r.Veber_pass?"ok":"no"}">${r.Veber_pass?"ผ่าน":"ไม่ผ่าน"}</td></tr>`).join("")+"</tbody>";
+  document.getElementById("dl").innerHTML = `<thead><tr><th>${S[lang].cmpd}</th>${cols.map(c=>`<th>${c}</th>`).join("")}<th>Lipinski</th><th>Veber</th></tr></thead><tbody>`+
+    DATA.rows.map(r=>`<tr><td>${name(r.ligand)}</td>${cols.map(c=>`<td>${typeof r[c]==="number"&&!Number.isInteger(r[c])?r[c].toFixed(1):r[c]}</td>`).join("")}
+    <td class="${r.Lipinski_violations<=1?"ok":"no"}">${r.Lipinski_violations} ${S[lang].items}</td><td class="${r.Veber_pass?"ok":"no"}">${r.Veber_pass?S[lang].pass:S[lang].fail}</td></tr>`).join("")+"</tbody>";
 }
 
 document.querySelectorAll(".seg button").forEach(b=>b.onclick=()=>setTarget(b.dataset.t));
 toggle("btn-surf",()=>surf,v=>surf=v); toggle("btn-xtal",()=>xtal,v=>xtal=v); toggle("btn-spin",()=>spin,v=>spin=v);
 if(matchMedia("(prefers-reduced-motion: reduce)").matches){spin=false;document.getElementById("btn-spin").setAttribute("aria-pressed","false");}
-statics(); setTarget("MGAM");
+function applyLang(){
+  document.documentElement.lang = lang;
+  document.querySelectorAll("[data-en]").forEach(el=>{
+    if(el.dataset.th === undefined) el.dataset.th = el.innerHTML;
+    el.innerHTML = (lang === "en") ? el.dataset.en : el.dataset.th;
+  });
+  document.getElementById("lang-label").textContent = (lang === "en") ? "ไทย" : "EN";
+  statics(); renderList(); setTarget(tgt);
+}
+document.getElementById("lang").onclick = () => {
+  lang = (lang === "en") ? "th" : "en";
+  try { localStorage.setItem("rb-lang", lang); } catch(e) {}
+  applyLang();
+};
+statics(); setTarget("MGAM"); applyLang();
 matchMedia("(prefers-color-scheme: dark)").addEventListener("change",()=>draw());
 new MutationObserver(()=>draw()).observe(document.documentElement,{attributes:true,attributeFilter:["data-theme"]});
 </script>
